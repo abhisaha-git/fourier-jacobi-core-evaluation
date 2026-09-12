@@ -1,0 +1,33 @@
+✔ [3138/3164] Built FourierJacobi.Analysis.I2Convergence (43s)
+✔ [3139/3164] Built FourierJacobi.Analysis.FiberIntegration (66s)
+✔ [3140/3164] Built FourierJacobi.Measure.UnitScaling (68s)
+✔ [3141/3164] Built FourierJacobi.Measure.PaperMultiplicativeHaar (68s)
+✔ [3142/3164] Built FourierJacobi.Analysis.I2Domains (72s)
+ℹ [3143/3164] Built FourierJacobi.Analysis.ExplicitKernel (71s)
+info: ../../publications/fourier-jacobi-core-evaluation/FourierJacobi/Analysis/ExplicitKernel.lean:91:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+✔ [3144/3164] Built FourierJacobi.Valuations.KernelShells (71s)
+✔ [3145/3164] Built FourierJacobi.Measure.ShellCollision (72s)
+✔ [3146/3164] Built FourierJacobi.Analysis.I2Predicates (18s)
+✔ [3147/3164] Built FourierJacobi.Analysis.HaarKernel (37s)
+✔ [3148/3164] Built FourierJacobi.Measure.JointCollision (39s)
+✔ [3149/3164] Built FourierJacobi.Analysis.I2Complete (44s)
+✔ [3150/3164] Built FourierJacobi.Analysis.HaarLatticePartition (31s)
+✔ [3151/3164] Built FourierJacobi.Analysis.I2Assembly (26s)
+✔ [3152/3164] Built FourierJacobi.Analysis.I2Ambient (27s)
+✔ [3153/3164] Built FourierJacobi.Analysis.HaarCellMass (30s)
+✔ [3154/3164] Built FourierJacobi.Analysis.HaarCellValue (30s)
+✔ [3155/3164] Built FourierJacobi.Analysis.I2Partition (85s)
+✔ [3156/3164] Built FourierJacobi.Analysis.I2Master (15s)
+✔ [3157/3164] Built FourierJacobi.Analysis.HaarCellMaster (20s)
+✔ [3158/3164] Built FourierJacobi.Analysis.LatticeCore (13s)
+✔ [3159/3164] Built FourierJacobi.Analysis.LatticeLimits (14s)
+✔ [3160/3164] Built FourierJacobi.Analysis.CentralWeylSeries (13s)
+✔ [3161/3164] Built FourierJacobi.Analysis.HaarCoreAssembly (17s)
+✔ [3162/3164] Built FourierJacobi.Analysis.HaarLimits (17s)
+✔ [3163/3164] Built FourierJacobi (17s)
+Build completed successfully (3164 jobs).

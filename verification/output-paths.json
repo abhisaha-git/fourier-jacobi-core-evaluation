@@ -1,0 +1,56 @@
+[
+  {
+    "root": "publications/fourier-jacobi-core-evaluation",
+    "resolved": "C:\\Users\\Abhishek\\Documents\\SpiderOak Hive\\Math Documents\\Codex Maths Projects\\publications\\fourier-jacobi-core-evaluation",
+    "reparse_points": 0,
+    "inside_workspace": true
+  },
+  {
+    "root": "build/fourier-jacobi-core-lean",
+    "resolved": "C:\\Users\\Abhishek\\Documents\\SpiderOak Hive\\Math Documents\\Codex Maths Projects\\build\\fourier-jacobi-core-lean",
+    "reparse_points": 0,
+    "inside_workspace": true
+  },
+  {
+    "root": "build/fourier-jacobi-lean/.lake/build",
+    "resolved": "C:\\Users\\Abhishek\\Documents\\SpiderOak Hive\\Math Documents\\Codex Maths Projects\\build\\fourier-jacobi-lean\\.lake\\build",
+    "reparse_points": 0,
+    "inside_workspace": true
+  },
+  {
+    "root": ".lake/packages",
+    "resolved": "C:\\Users\\Abhishek\\Documents\\SpiderOak Hive\\Math Documents\\Codex Maths Projects\\.lake\\packages",
+    "reparse_points": 0,
+    "inside_workspace": true
+  },
+  {
+    "root": ".tools/elan/toolchains/leanprover--lean4---v4.33.1",
+    "resolved": "C:\\Users\\Abhishek\\Documents\\SpiderOak Hive\\Math Documents\\Codex Maths Projects\\.tools\\elan\\toolchains\\leanprover--lean4---v4.33.1",
+    "reparse_points": 0,
+    "inside_workspace": true
+  },
+  {
+    "root": ".cache",
+    "resolved": "C:\\Users\\Abhishek\\Documents\\SpiderOak Hive\\Math Documents\\Codex Maths Projects\\.cache",
+    "reparse_points": 0,
+    "inside_workspace": true
+  },
+  {
+    "root": ".config",
+    "resolved": "C:\\Users\\Abhishek\\Documents\\SpiderOak Hive\\Math Documents\\Codex Maths Projects\\.config",
+    "reparse_points": 0,
+    "inside_workspace": true
+  },
+  {
+    "root": ".local",
+    "resolved": "C:\\Users\\Abhishek\\Documents\\SpiderOak Hive\\Math Documents\\Codex Maths Projects\\.local",
+    "reparse_points": 0,
+    "inside_workspace": true
+  },
+  {
+    "root": ".tmp",
+    "resolved": "C:\\Users\\Abhishek\\Documents\\SpiderOak Hive\\Math Documents\\Codex Maths Projects\\.tmp",
+    "reparse_points": 0,
+    "inside_workspace": true
+  }
+]

@@ -1,0 +1,1328 @@
+NEW FourierJacobi.Measure.unitConditionalMass_collisionTail._simp_1_8 : ∀ {R : Type u_1} [inst : AddMonoidWithOne R]
+  [CharZero R] (n : ℕ), (↑n + 1 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.actual_minor_minimum_integer_zero : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (a x y : K) (k j h c : ℤ),
+  v a = ↑k →
+    v x = ↑j →
+      v y = ↑h →
+        a ≠ 0 →
+          FourierJacobi.Valuations.matrixMinimum v
+              (FourierJacobi.LocalMatrix.secondCompound (FourierJacobi.LocalMatrix.g a x y 0)) =
+            ↑(FourierJacobi.Valuations.minorMinimum 0 k j h c)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_determinant_valuation._simp_1_7 : ∀ {R : Type u_1} [inst : AddMonoidWithOne R]
+  [CharZero R] (n : ℕ), (↑n + 1 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Analysis.i0_case6_reindexed._proof_1_1 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬3 * (-↑n.1 - 1) + 2 * ↑n.2.1 + 2 * ↑n.2.2 + 3 * 0 + 4 * (↑n.1 + 1) = ↑(n.1 + 1 + 2 * n.2.1 + 2 * n.2.2) → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.entryListMinimum : {K : Type u_1} →
+  [inst : Field K] → AddValuation K (WithTop ℤ) → K → K → K → K → WithTop ℤ
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_entry_minimum_integer_zero : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (a x y : K) (k j h : ℤ),
+  v a = ↑k →
+    v x = ↑j →
+      v y = ↑h →
+        FourierJacobi.Valuations.matrixMinimum v (FourierJacobi.LocalMatrix.g a x y 0) =
+          ↑(FourierJacobi.Valuations.entryMinimum 0 k j h)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv_val : ∀ (tail : Bool) (n : ℕ × ℕ × ℕ),
+  ↑((FourierJacobi.Analysis.i0NegativeRowEquiv tail) n) =
+    (-↑n.1 - 1, ↑n.2.1, if tail = true then -↑n.2.2 - 1 else ↑n.2.2)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.collisionTail_measurableSet : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [BorelSpace K]
+  (n : ℕ), MeasurableSet (FourierJacobi.Measure.collisionTail K n)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.determinant_zero_section._simp_1_1 : ∀ {α : Type u_1} {a b : α}, (a ∈ {b}) = (a = b)
+AXIOMS [propext]
+NEW FourierJacobi.Measure.integralUnits.eq_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  FourierJacobi.Measure.integralUnits K = (↑(IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer))ᶜ
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case7_reindexed._proof_1_2 : ∀ (n : ℕ × ℕ × ℕ), ¬-↑n.1 - 1 = -↑(n.1 + 1) → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.actual_minima_integer_nonzero : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (a x y z : K) (r k j h c : ℤ),
+  r ≠ 0 →
+    v a = ↑k →
+      v x = ↑j →
+        v y = ↑h →
+          v z = ↑(-r) →
+            (2 * h = j - r → v (y ^ 2 / (x * z) - 1) = ↑c) →
+              FourierJacobi.Valuations.matrixMinimum v (FourierJacobi.LocalMatrix.g a x y z) =
+                  ↑(FourierJacobi.Valuations.entryMinimum r k j h) ∧
+                FourierJacobi.Valuations.matrixMinimum v
+                    (FourierJacobi.LocalMatrix.secondCompound (FourierJacobi.LocalMatrix.g a x y z)) =
+                  ↑(FourierJacobi.Valuations.minorMinimum r k j h c)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_four_rows_absolutelySummable : ∀ (t d U V T : ℂ),
+  ‖t ^ 2‖ < 1 →
+    ‖d * T * V * t‖ < 1 →
+      ‖T * V * t / d‖ < 1 →
+        ‖T * U * t ^ 4‖ < 1 →
+          (Summable fun p => ‖FourierJacobi.Analysis.i0Shell t d U V T ↑p‖) ∧
+            (Summable fun p => ‖FourierJacobi.Analysis.i0Shell t d U V T ↑p‖) ∧
+              (Summable fun p => ‖FourierJacobi.Analysis.i0Shell t d U V T ↑p‖) ∧
+                Summable fun p => ‖FourierJacobi.Analysis.i0Shell t d U V T ↑p‖
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.summable_norm_three_geometric : ∀ (C a b c : ℂ),
+  ‖a‖ < 1 → ‖b‖ < 1 → ‖c‖ < 1 → Summable fun n => ‖C * a ^ n.1 * b ^ n.2.1 * c ^ n.2.2‖
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.residueCardinality_one_lt._proof_1_1 : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  2 ≤ FourierJacobi.Measure.residueCardinality K → ¬1 < FourierJacobi.Measure.residueCardinality K → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integers_measurableEmbedding : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [BorelSpace K],
+  MeasurableEmbedding fun x => ↑x
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.collisionTail : (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] → [IsNonarchimedeanLocalField K] → ℕ → Set ↥(ValuativeRel.valuation K).integer
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case7_reindexed : ∀ (t d U V T : ℂ) (n : ℕ × ℕ × ℕ),
+  FourierJacobi.Analysis.i0Shell t d U V T ↑((FourierJacobi.Analysis.i0NegativeRowEquiv true) n) =
+    (1 - t ^ 2) ^ 2 * (T * V * t / d) * (T * U * t ^ 4) * (T * V * t / d) ^ n.1 * (t ^ 2) ^ n.2.1 *
+      (T * U * t ^ 4) ^ n.2.2
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.discreteValuation : (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] → [IsNonarchimedeanLocalField K] → Valuation K (WithZero (Multiplicative ℤ))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.collisionTail_succ_subset : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (n : ℕ),
+  FourierJacobi.Measure.collisionTail K (n + 1) ⊆ FourierJacobi.Measure.collisionTail K n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.localFieldValuation._proof_4 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (x y : K),
+  FourierJacobi.Valuations.extendedNegLog ((FourierJacobi.Valuations.discreteValuation K) (x * y)) =
+    FourierJacobi.Valuations.extendedNegLog ((FourierJacobi.Valuations.discreteValuation K) x) +
+      FourierJacobi.Valuations.extendedNegLog ((FourierJacobi.Valuations.discreteValuation K) y)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Algebra.regionTerm1.eq_1 : ∀ {K : Type u_1} [inst : Field K] (t d U V P N E F G : K),
+  FourierJacobi.Algebra.regionTerm1 t d U V P N E F G = U * (G ^ 1)⁻¹ * (P ^ 1)⁻¹ * t ^ 4 * (1 + -1 * t ^ 2)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_unitCenteredTail._simp_1_5 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 3] [NeZero 3], (3 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.unitConditionalMass_unitCenteredTail : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K]
+  [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (a : (↥(ValuativeRel.valuation K).integer)ˣ) (n : ℕ),
+  FourierJacobi.Measure.unitConditionalMass K (FourierJacobi.Measure.unitCenteredTail K a (n + 1)) =
+    (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n / (↑(FourierJacobi.Measure.residueCardinality K) - 1)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.valuation_ratio_sub_one._simp_1_7 : ∀ {R : Type u_1} [inst : AddMonoidWithOne R] [CharZero R]
+  (n : ℕ), (↑n + 1 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.collisionTail.eq_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (n : ℕ),
+  FourierJacobi.Measure.collisionTail K n =
+    (fun x => x - 1) ⁻¹' ↑(IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ^ n)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar_integralShell : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (n : ℕ),
+  (FourierJacobi.Measure.integersHaar K) (FourierJacobi.Measure.integralShell K n) =
+    (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n - (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ (n + 1)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.cartanEliminator_symplectic : ∀ {K : Type u_1} [inst : Field K] (d b₁ b₂ c : K),
+  (FourierJacobi.Valuations.cartanEliminator d b₁ b₂ c).transpose * FourierJacobi.LocalMatrix.J *
+      FourierJacobi.Valuations.cartanEliminator d b₁ b₂ c =
+    FourierJacobi.LocalMatrix.J
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.localField_haar_nullSingletonClass : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [BorelSpace K] (μ : MeasureTheory.Measure K) [μ.IsAddHaarMeasure], MeasureTheory.NullSingletonClass μ
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.localFieldValuation._proof_2 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  FourierJacobi.Valuations.extendedNegLog ((FourierJacobi.Valuations.discreteValuation K) 1) = 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.firstColumnShape.eq_1 : ∀ {K : Type u_1} [inst : Field K] (d b₁ b₂ c p q r s u w : K),
+  FourierJacobi.Valuations.firstColumnShape d b₁ b₂ c p q r s u w =
+    !![d, b₁, b₂, c; 0, p, q, u; 0, r, s, w; 0, 0, 0, d⁻¹]
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integralUnits.congr_simp : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (a a_1 : ↥(ValuativeRel.valuation K).integer),
+  a = a_1 → FourierJacobi.Measure.integralUnits K a = FourierJacobi.Measure.integralUnits K a_1
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth_zero._simp_1_11 : ∀ {G₀ : Type u_3}
+  [inst : GroupWithZero G₀] {a : G₀} (n : ℤ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRow_cartan._proof_1_6 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬(-2 * (-↑n.2.2 - 1) = 2 * ↑n.2.2 + 2 ∧ -(-↑n.1 - 1) = ↑n.1 + 1) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRow_cartan._proof_1_3 : ∀ (n : ℕ × ℕ × ℕ), ¬0 ≤ ↑n.2.2 → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Measure.mem_integralUnits_iff._simp_1_2 : ∀ {R : Type u_1} [inst : CommSemiring R]
+  [inst_1 : IsLocalRing R] (x : R), (x ∈ IsLocalRing.maximalIdeal R) = (x ∈ nonunits R)
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.extendedNegLog : WithZero (Multiplicative ℤ) → WithTop ℤ
+AXIOMS [Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv._proof_10 : ∀ (tail : Bool)
+  (p : FourierJacobi.Analysis.I0NegativeRow tail),
+  ⟨(-↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).1 - 1,
+        ↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.1,
+        if tail = true then
+          -↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.2 - 1
+        else ↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.2),
+      ⋯⟩ =
+    p
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_minor_minimum : ∀ {K : Type u_1} [inst : Field K] (v : AddValuation K (WithTop ℤ))
+  (a x y z : K),
+  a ≠ 0 →
+    FourierJacobi.Valuations.matrixMinimum v
+        (FourierJacobi.LocalMatrix.secondCompound (FourierJacobi.LocalMatrix.g a x y z)) =
+      FourierJacobi.Valuations.minorListMinimum v a x y z
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRow_cartan._proof_1_2 : ∀ (n : ℕ × ℕ × ℕ), ¬-2 * ↑n.1 ≤ ↑n.2.1 - 2 * ↑n.1 → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv_val : ∀ (tail : Bool) (n : ℕ × ℕ × ℕ),
+  ↑((FourierJacobi.Analysis.i0PositiveRowEquiv tail) n) =
+    (↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar_apply : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (s : Set ↥(ValuativeRel.valuation K).integer),
+  (FourierJacobi.Measure.integersHaar K) s = (FourierJacobi.Measure.additiveHaar K) ((fun x => ↑x) '' s)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar_real_integralShell : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (n : ℕ),
+  (FourierJacobi.Measure.integersHaar K).real (FourierJacobi.Measure.integralShell K n) =
+    (1 - (↑(FourierJacobi.Measure.residueCardinality K))⁻¹) * (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth_zero._simp_1_12 : ∀ {R : Type u_1}
+  [inst : AddMonoidWithOne R] [CharZero R] (n : ℕ), (↑n + 1 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Analysis.i0_case2_reindexed._proof_1_2 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬(2 * ↑n.2.2 + 2) / 2 = ↑(n.2.2 + 1) → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.minorListMinimum.eq_1 : ∀ {K : Type u_1} [inst : Field K] (v : AddValuation K (WithTop ℤ))
+  (a x y z : K),
+  FourierJacobi.Valuations.minorListMinimum v a x y z =
+    min (min (min (min (min (min (min (min 0 (v a)) (v a⁻¹)) (v (a * x))) (v y)) (v (a * y))) (v (a * z))) (v (z / a)))
+      (v (a * (y ^ 2 - x * z)))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.tableZero.eq_1 : ∀ (k j h : ℤ),
+  FourierJacobi.Valuations.tableZero k j h =
+    if 0 ≤ k then
+      if -2 * k ≤ j then if -k ≤ h then (0, k) else (-2 * k - 2 * h, k)
+      else
+        if h < k + j then (-2 * k - 2 * h, k) else if j ≤ 2 * h then (0, -k - j) else (2 * j - 4 * h, 2 * h - 2 * j - k)
+    else
+      if 0 ≤ j then if 0 ≤ h then (0, -k) else (-2 * h, -k)
+      else if h < j then (-2 * h, -k) else if j ≤ 2 * h then (0, -k - j) else (2 * j - 4 * h, 2 * h - 2 * j - k)
+AXIOMS []
+NEW FourierJacobi.Valuations.extendedNegLog_mul : ∀ (x y : WithZero (Multiplicative ℤ)),
+  FourierJacobi.Valuations.extendedNegLog (x * y) =
+    FourierJacobi.Valuations.extendedNegLog x + FourierJacobi.Valuations.extendedNegLog y
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.hasSum_i0_case7_regionTerm : ∀ (t d U V T : ℂ),
+  ‖t ^ 2‖ < 1 →
+    ‖T * V * t / d‖ < 1 →
+      ‖T * U * t ^ 4‖ < 1 →
+        HasSum (fun p => FourierJacobi.Analysis.i0Shell t d U V T ↑p)
+          (FourierJacobi.Algebra.regionTerm6 t d (T * U) (T * V) (1 - d * (T * V) * t) (1 - T * V * t / d)
+            (1 - (T * V) ^ 2 * t ^ 2) (1 - T * U * t ^ 2) (1 - T * U * t ^ 4))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv._proof_3 : ∀ (k j h : ℕ),
+  ¬((-(-↑k - 1) - 1).toNat = k ∧ (↑j).toNat = j ∧ (↑h).toNat = h) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRow_cartan._proof_1_1 : ∀ (n : ℕ × ℕ × ℕ), 0 ≤ -↑n.1 - 1 → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Measure.coordinates_determinant_ae : ∀ {K : Type u_1} [inst : Field K] [inst_1 : TopologicalSpace K]
+  [IsTopologicalRing K] [SecondCountableTopology K] [T2Space K] [inst_5 : MeasurableSpace K] [BorelSpace K]
+  (μ ν : MeasureTheory.Measure K) [MeasureTheory.NullSingletonClass ν] [MeasureTheory.NullSingletonClass μ] (z : K),
+  ∀ᵐ (p : K × K) ∂μ.prod ν, p.1 ≠ 0 ∧ p.2 ≠ 0 ∧ p.2 ^ 2 - p.1 * z ≠ 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitCenteredTail.eq_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (a : (↥(ValuativeRel.valuation K).integer)ˣ)
+  (n : ℕ),
+  FourierJacobi.Measure.unitCenteredTail K a n =
+    (fun x => x - ↑a) ⁻¹' ↑(IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ^ n)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth._simp_1_8 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 4] [NeZero 4], (4 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Analysis.i0PositiveRow_cartan._proof_1_1 : ∀ (n : ℕ × ℕ × ℕ), ¬0 ≤ ↑n.1 → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.localFieldValuation_surjective : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  Function.Surjective ⇑(FourierJacobi.Valuations.localFieldValuation K)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.mem_integralUnits_iff : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (x : ↥(ValuativeRel.valuation K).integer),
+  x ∈ FourierJacobi.Measure.integralUnits K ↔ IsUnit x
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case1_reindexed : ∀ (t d U V T : ℂ) (n : ℕ × ℕ × ℕ),
+  FourierJacobi.Analysis.i0Shell t d U V T ↑((FourierJacobi.Analysis.i0PositiveRowEquiv false) n) =
+    (1 - t ^ 2) ^ 2 * (d * T * V * t) ^ n.1 * (t ^ 2) ^ n.2.1 * (t ^ 2) ^ n.2.2
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth_zero._simp_1_8 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 4] [NeZero 4], (4 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.minorMinimum.eq_1 : ∀ (r k j h c : ℤ),
+  FourierJacobi.Valuations.minorMinimum r k j h c =
+    if r = 0 then min (FourierJacobi.Valuations.baseMinimum k j h) (k + 2 * h)
+    else
+      min (min (min (FourierJacobi.Valuations.baseMinimum k j h) (k - r)) (-k - r))
+        (k + FourierJacobi.Valuations.determinantValuation r j h c)
+AXIOMS []
+NEW FourierJacobi.Measure.unitConditionalMass_collisionTail._simp_1_6 : ∀ {M₀ : Type u_1} [inst : MonoidWithZero M₀]
+  {a : M₀} [IsReduced M₀] (n : ℕ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth._simp_1_9 : ∀ {M₀ : Type u_1} [inst : Mul M₀]
+  [inst_1 : Zero M₀] [NoZeroDivisors M₀] {a b : M₀}, a ≠ 0 → b ≠ 0 → (a * b = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.actual_minor_minimum_le_zero : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (a x y z : K),
+  a ≠ 0 →
+    FourierJacobi.Valuations.matrixMinimum v
+        (FourierJacobi.LocalMatrix.secondCompound (FourierJacobi.LocalMatrix.g a x y z)) ≤
+      0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth._simp_1_7 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 3] [NeZero 3], (3 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.localFieldValuation._proof_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  FourierJacobi.Valuations.extendedNegLog ((FourierJacobi.Valuations.discreteValuation K) 0) = ⊤
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.residueCardinality._proof_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [IsNonarchimedeanLocalField K], IsLocalRing ↥(ValuativeRel.valuation K).integer
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_entry_minimum._simp_1_2 : ∀ {α : Type u} [inst : LinearOrder α] {a b c : α},
+  (c ≤ min a b) = (c ≤ a ∧ c ≤ b)
+AXIOMS [propext]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth_zero._simp_1_10 : ∀ {M₀ : Type u_1}
+  [inst : MonoidWithZero M₀] {a : M₀} [IsReduced M₀] (n : ℕ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.actual_determinant_valuation._simp_1_6 : ∀ {G₀ : Type u_3} [inst : GroupWithZero G₀]
+  {a : G₀} (n : ℤ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.valuation_ratio_sub_one._simp_1_5 : ∀ {M₀ : Type u_1} [inst : MonoidWithZero M₀] {a : M₀}
+  [IsReduced M₀] (n : ℕ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.localField_finite_valuations_ae : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [BorelSpace K]
+  (μ : MeasureTheory.Measure K) [μ.IsAddHaarMeasure] (z : K),
+  ∀ᵐ (p : K × K) ∂μ.prod μ,
+    ∃ j h c,
+      (FourierJacobi.Valuations.localFieldValuation K) p.1 = ↑j ∧
+        (FourierJacobi.Valuations.localFieldValuation K) p.2 = ↑h ∧
+          (FourierJacobi.Valuations.localFieldValuation K) (p.2 ^ 2 - p.1 * z) = ↑c
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.additiveHaar_integers : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K], (FourierJacobi.Measure.additiveHaar K) ↑(ValuativeRel.valuation K).integer = 1
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.matrixMinimum_le_entry : ∀ {K : Type u_1} [inst : Field K] {n m : ℕ}
+  (v : AddValuation K (WithTop ℤ)) (A : Matrix (Fin n) (Fin m) K) (i : Fin n) (j : Fin m),
+  FourierJacobi.Valuations.matrixMinimum v A ≤ v (A i j)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.maximalIdeal_pow_index : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (n : ℕ),
+  (Submodule.toAddSubgroup (IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ^ n)).index =
+    FourierJacobi.Measure.residueCardinality K ^ n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_determinant_valuation._simp_1_4 : ∀ {M₀ : Type u_1} [inst : Mul M₀]
+  [inst_1 : Zero M₀] [NoZeroDivisors M₀] {a b : M₀}, a ≠ 0 → b ≠ 0 → (a * b = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Analysis.i0Shell : ℂ → ℂ → ℂ → ℂ → ℂ → ℤ × ℤ × ℤ → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.collisionTail.congr_simp : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (n n_1 : ℕ),
+  n = n_1 →
+    ∀ (a a_1 : ↥(ValuativeRel.valuation K).integer),
+      a = a_1 → FourierJacobi.Measure.collisionTail K n a = FourierJacobi.Measure.collisionTail K n_1 a_1
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_minor_minimum._simp_1_2 : ∀ {α : Type u} [inst : LinearOrder α] {a b c : α},
+  (c ≤ min a b) = (c ≤ a ∧ c ≤ b)
+AXIOMS [propext]
+NEW FourierJacobi.Measure.integersHaar.congr_simp : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K], FourierJacobi.Measure.integersHaar K = FourierJacobi.Measure.integersHaar K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case6_reindexed : ∀ (t d U V T : ℂ) (n : ℕ × ℕ × ℕ),
+  FourierJacobi.Analysis.i0Shell t d U V T ↑((FourierJacobi.Analysis.i0NegativeRowEquiv false) n) =
+    (1 - t ^ 2) ^ 2 * (T * V * t / d) * (T * V * t / d) ^ n.1 * (t ^ 2) ^ n.2.1 * (t ^ 2) ^ n.2.2
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionTail._simp_1_7 : ∀ {G₀ : Type u_3} [inst : GroupWithZero G₀]
+  {a : G₀} (n : ℤ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv._proof_9 : ∀ (tail : Bool)
+  (p : FourierJacobi.Analysis.I0NegativeRow tail),
+  (-↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).1 - 1,
+          ↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.1,
+          if tail = true then
+            -↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.2 - 1
+          else ↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.2).1 <
+      0 ∧
+    0 ≤
+        (-↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).1 - 1,
+              ↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.1,
+              if tail = true then
+                -↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.2 - 1
+              else
+                ↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat,
+                        (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.2).2.1 ∧
+      if tail = true then
+        (-↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).1 - 1,
+                ↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.1,
+                if tail = true then
+                  -↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.2 -
+                    1
+                else
+                  ↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat,
+                          (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.2).2.2 <
+          0
+      else
+        0 ≤
+          (-↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).1 - 1,
+                ↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.1,
+                if tail = true then
+                  -↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat, (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.2 -
+                    1
+                else
+                  ↑((-(↑p).1 - 1).toNat, (↑p).2.1.toNat,
+                          (if tail = true then -(↑p).2.2 - 1 else (↑p).2.2).toNat).2.2).2.2
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.localField_punctured_nhds : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [IsNonarchimedeanLocalField K], (nhdsWithin 0 {0}ᶜ).NeBot
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.extendedNegLog_zero : FourierJacobi.Valuations.extendedNegLog 0 = ⊤
+AXIOMS [Quot.sound]
+NEW FourierJacobi.Measure.integralShell : (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] → [IsNonarchimedeanLocalField K] → ℕ → Set ↥(ValuativeRel.valuation K).integer
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.elementary_right_reduction : ∀ {K : Type u_1} [inst : Field K] (d b₁ b₂ c p q r s u w : K),
+  d ≠ 0 →
+    (FourierJacobi.Valuations.firstColumnShape d b₁ b₂ c p q r s u w).transpose * FourierJacobi.LocalMatrix.J *
+          FourierJacobi.Valuations.firstColumnShape d b₁ b₂ c p q r s u w =
+        FourierJacobi.LocalMatrix.J →
+      p * s - q * r = 1 ∧
+        FourierJacobi.Valuations.firstColumnShape d b₁ b₂ c p q r s u w *
+            FourierJacobi.Valuations.cartanEliminator d b₁ b₂ c =
+          !![d, 0, 0, 0; 0, p, q, 0; 0, r, s, 0; 0, 0, 0, d⁻¹]
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.extendedNegLog_one : FourierJacobi.Valuations.extendedNegLog 1 = 0
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case2_reindexed._proof_1_1 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬3 * ↑n.1 + 2 * (↑n.2.1 - 2 * ↑n.1) + 2 * (-↑n.1 - ↑n.2.2 - 1) + 3 * (2 * ↑n.2.2 + 2) + 4 * ↑n.1 =
+        ↑(n.1 + 2 * n.2.1 + 4 * (n.2.2 + 1)) →
+    False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_singleton : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (x : ↥(ValuativeRel.valuation K).integer), FourierJacobi.Measure.unitConditionalMass K {x} = 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_unitCenteredTail._simp_1_6 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 4] [NeZero 4], (4 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Analysis.hasSum_i0_case6_regionTerm : ∀ (t d U V T : ℂ),
+  ‖t ^ 2‖ < 1 →
+    ‖T * V * t / d‖ < 1 →
+      HasSum (fun p => FourierJacobi.Analysis.i0Shell t d U V T ↑p)
+        (FourierJacobi.Algebra.regionTerm5 t d (T * U) (T * V) (1 - d * (T * V) * t) (1 - T * V * t / d)
+          (1 - (T * V) ^ 2 * t ^ 2) (1 - T * U * t ^ 2) (1 - T * U * t ^ 4))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.determinant_zero_null : ∀ {K : Type u_1} [inst : Field K] [inst_1 : TopologicalSpace K]
+  [IsTopologicalRing K] [SecondCountableTopology K] [T2Space K] [inst_5 : MeasurableSpace K] [BorelSpace K]
+  (μ ν : MeasureTheory.Measure K) [MeasureTheory.NullSingletonClass ν] (z : K),
+  (μ.prod ν) {p | p.2 ^ 2 - p.1 * z = 0} = 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionTail._simp_1_3 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 3] [NeZero 3], (3 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.integersHaar_unitCenteredTail : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (a : (↥(ValuativeRel.valuation K).integer)ˣ) (n : ℕ),
+  (FourierJacobi.Measure.integersHaar K) (FourierJacobi.Measure.unitCenteredTail K a n) =
+    (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K]
+  [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (n : ℕ),
+  FourierJacobi.Measure.unitConditionalMass K
+      (FourierJacobi.Measure.collisionTail K (n + 1) \ FourierJacobi.Measure.collisionTail K (n + 2)) =
+    (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ (n + 1)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.valuation_ratio_sub_one : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  (a x : ↥(ValuativeRel.valuation K).integer),
+  IsUnit x → (ValuativeRel.valuation K) (↑a / ↑x - 1) = (ValuativeRel.valuation K) (↑x - ↑a)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersCompact._proof_2 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  (interior { carrier := ↑(ValuativeRel.valuation K).integer, isCompact' := ⋯ }.carrier).Nonempty
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.extendedNegLog_nonnegative : ∀ (x : WithZero (Multiplicative ℤ)),
+  0 ≤ FourierJacobi.Valuations.extendedNegLog x ↔ x ≤ 1
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv._proof_2 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬(0 ≤ ↑n.1 ∧ -2 * ↑n.1 ≤ ↑n.2.1 - 2 * ↑n.1 ∧ -↑n.1 - ↑n.2.2 - 1 < -↑n.1) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitCenteredTail.congr_simp : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K]
+  (a a_1 : (↥(ValuativeRel.valuation K).integer)ˣ),
+  a = a_1 →
+    ∀ (n n_1 : ℕ),
+      n = n_1 →
+        ∀ (a_2 a_3 : ↥(ValuativeRel.valuation K).integer),
+          a_2 = a_3 →
+            FourierJacobi.Measure.unitCenteredTail K a n a_2 = FourierJacobi.Measure.unitCenteredTail K a_1 n_1 a_3
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.maximalIdeal_pow_finiteIndex : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (n : ℕ),
+  (Submodule.toAddSubgroup (IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ^ n)).FiniteIndex
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case7_reindexed._proof_1_4 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬(2 * ↑n.2.2 + 2) / 2 = ↑(n.2.2 + 1) → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.actual_determinant_valuation._simp_1_1 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 2] [NeZero 2], (2 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.unitCenteredTail_subset_units : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (a : (↥(ValuativeRel.valuation K).integer)ˣ)
+  {n : ℕ}, 0 < n → FourierJacobi.Measure.unitCenteredTail K a n ⊆ FourierJacobi.Measure.integralUnits K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRow_cartan._proof_1_5 : ∀ (n : ℕ × ℕ × ℕ), 0 ≤ -↑n.2.2 - 1 → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Measure.determinant_zero_section._simp_1_2 : ∀ {G : Type u_3} [inst : AddGroup G] {a b : G},
+  (a - b = 0) = (a = b)
+AXIOMS [propext]
+NEW FourierJacobi.Measure.unitConditionalMass_unitCenteredTail._simp_1_9 : ∀ {G₀ : Type u_3} [inst : GroupWithZero G₀]
+  {a : G₀} (n : ℤ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.additiveHaar : (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] →
+        [IsNonarchimedeanLocalField K] → [inst : MeasurableSpace K] → [BorelSpace K] → MeasureTheory.Measure K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_unitCenteredTail._simp_1_10 : ∀ {R : Type u_1} [inst : AddMonoidWithOne R]
+  [CharZero R] (n : ℕ), (↑n + 1 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.actual_determinant_valuation : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (x y z : K) (r j h c : ℤ),
+  v x = ↑j →
+    v y = ↑h →
+      v z = ↑(-r) →
+        (2 * h = j - r → v (y ^ 2 / (x * z) - 1) = ↑c) →
+          v (y ^ 2 - x * z) = ↑(FourierJacobi.Valuations.determinantValuation r j h c)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case7_reindexed._proof_1_3 : ∀ (n : ℕ × ℕ × ℕ), ¬↑n.1 + 1 = ↑(n.1 + 1) → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Algebra.regionTerm5.eq_1 : ∀ {K : Type u_1} [inst : Field K] (t d U V P N E F G : K),
+  FourierJacobi.Algebra.regionTerm5 t d U V P N E F G = V * t * (N ^ 1)⁻¹ * (d ^ 1)⁻¹
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.hasSum_i0_case2 : ∀ (t d U V T : ℂ),
+  ‖t ^ 2‖ < 1 →
+    ‖d * T * V * t‖ < 1 →
+      ‖T * U * t ^ 4‖ < 1 →
+        HasSum (fun p => FourierJacobi.Analysis.i0Shell t d U V T ↑p)
+          (T * U * t ^ 4 * (1 - t ^ 2) / ((1 - T * U * t ^ 4) * (1 - d * T * V * t)))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.localFieldValuation_zero : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  (FourierJacobi.Valuations.localFieldValuation K) 0 = ⊤
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv._proof_9 : ∀ (tail : Bool)
+  (p : FourierJacobi.Analysis.I0PositiveRow tail),
+  0 ≤
+      (↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+          ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                    (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.1 -
+            2 *
+              ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                    (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+          if tail = true then
+            -↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                        (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1 -
+                ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                        (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+              1
+          else
+            ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                      (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+              ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                    (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1).1 ∧
+    -2 *
+          (↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                    (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+              ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                        (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.1 -
+                2 *
+                  ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                        (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+              if tail = true then
+                -↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                            (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1 -
+                    ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                            (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                  1
+              else
+                ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                  ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                        (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1).1 ≤
+        (↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                    (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+              ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                        (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.1 -
+                2 *
+                  ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                        (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+              if tail = true then
+                -↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                            (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1 -
+                    ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                            (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                  1
+              else
+                ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                  ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                        (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1).2.1 ∧
+      if tail = true then
+        (↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                      (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+                ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.1 -
+                  2 *
+                    ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+                if tail = true then
+                  -↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                              (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1 -
+                      ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                              (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                    1
+                else
+                  ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                            (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                    ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1).2.2 <
+          -(↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                      (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+                ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.1 -
+                  2 *
+                    ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+                if tail = true then
+                  -↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                              (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1 -
+                      ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                              (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                    1
+                else
+                  ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                            (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                    ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1).1
+      else
+        -(↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                      (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+                ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.1 -
+                  2 *
+                    ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+                if tail = true then
+                  -↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                              (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1 -
+                      ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                              (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                    1
+                else
+                  ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                            (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                    ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1).1 ≤
+          (↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                      (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+                ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.1 -
+                  2 *
+                    ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+                if tail = true then
+                  -↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                              (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1 -
+                      ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                              (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                    1
+                else
+                  ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                            (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+                    ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                          (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1).2.2
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.additiveHaar._proof_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [IsNonarchimedeanLocalField K], IsTopologicalAddGroup K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case2_reindexed : ∀ (t d U V T : ℂ) (n : ℕ × ℕ × ℕ),
+  FourierJacobi.Analysis.i0Shell t d U V T ↑((FourierJacobi.Analysis.i0PositiveRowEquiv true) n) =
+    (1 - t ^ 2) ^ 2 * (T * U * t ^ 4) * (d * T * V * t) ^ n.1 * (t ^ 2) ^ n.2.1 * (T * U * t ^ 4) ^ n.2.2
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case6_reindexed._proof_1_3 : ∀ (n : ℕ × ℕ × ℕ), ¬↑n.1 + 1 = ↑(n.1 + 1) → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Measure.mem_maximalIdeal_pow_iff_valuation_le : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K]
+  (π : ↥(ValuativeRel.valuation K).integer),
+  IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer = Ideal.span {π} →
+    ∀ (n : ℕ) (x : ↥(ValuativeRel.valuation K).integer),
+      x ∈ IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ^ n ↔
+        (ValuativeRel.valuation K) ↑x ≤ (ValuativeRel.valuation K) ↑π ^ n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.localField_matrix_minima_ae : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [BorelSpace K]
+  (μ : MeasureTheory.Measure K) [μ.IsAddHaarMeasure] (a z : K),
+  a ≠ 0 →
+    ∀ (r : ℤ),
+      r ≠ 0 →
+        (FourierJacobi.Valuations.localFieldValuation K) z = ↑(-r) →
+          ∀ᵐ (p : K × K) ∂μ.prod μ,
+            ∃ k j h c,
+              0 ≤ c ∧
+                (FourierJacobi.Valuations.localFieldValuation K) a = ↑k ∧
+                  (FourierJacobi.Valuations.localFieldValuation K) p.1 = ↑j ∧
+                    (FourierJacobi.Valuations.localFieldValuation K) p.2 = ↑h ∧
+                      (2 * h = j - r →
+                          (FourierJacobi.Valuations.localFieldValuation K) (p.2 ^ 2 / (p.1 * z) - 1) = ↑c) ∧
+                        FourierJacobi.Valuations.matrixMinimum (FourierJacobi.Valuations.localFieldValuation K)
+                              (FourierJacobi.LocalMatrix.g a p.1 p.2 z) =
+                            ↑(FourierJacobi.Valuations.entryMinimum r k j h) ∧
+                          FourierJacobi.Valuations.matrixMinimum (FourierJacobi.Valuations.localFieldValuation K)
+                              (FourierJacobi.LocalMatrix.secondCompound (FourierJacobi.LocalMatrix.g a p.1 p.2 z)) =
+                            ↑(FourierJacobi.Valuations.minorMinimum r k j h c)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv : (tail : Bool) → ℕ × ℕ × ℕ ≃ FourierJacobi.Analysis.I0PositiveRow tail
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv._proof_6 : ∀ (k j h : ℤ),
+  k < 0 → 0 ≤ j → h < 0 → ¬(-↑(-k - 1).toNat - 1 = k ∧ ↑j.toNat = j ∧ -↑(-h - 1).toNat - 1 = h) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv._proof_5 : ∀ (k j h : ℤ),
+  0 ≤ k →
+    -2 * k ≤ j →
+      -k ≤ h → ¬(↑k.toNat = k ∧ ↑(j + 2 * k).toNat - 2 * ↑k.toNat = j ∧ ↑(h + k).toNat - ↑k.toNat = h) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.nonzero_of_integer_valuation : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (x : K) (k : ℤ), v x = ↑k → x ≠ 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.le_matrixMinimum_iff : ∀ {K : Type u_1} [inst : Field K] {n m : ℕ}
+  (v : AddValuation K (WithTop ℤ)) (A : Matrix (Fin n) (Fin m) K) (b : WithTop ℤ),
+  b ≤ FourierJacobi.Valuations.matrixMinimum v A ↔ ∀ (i : Fin n) (j : Fin m), b ≤ v (A i j)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.residueCardinality : (K : Type u_1) →
+  [inst : Field K] → [inst_1 : ValuativeRel K] → [inst_2 : TopologicalSpace K] → [IsNonarchimedeanLocalField K] → ℕ
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.valuation_ratio_sub_one._simp_1_6 : ∀ {G₀ : Type u_3} [inst : GroupWithZero G₀] {a : G₀}
+  (n : ℤ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.restrict_goodCoordinates : ∀ {K : Type u_1} [inst : Field K] [inst_1 : TopologicalSpace K]
+  [IsTopologicalRing K] [SecondCountableTopology K] [T2Space K] [inst_5 : MeasurableSpace K] [BorelSpace K]
+  (μ ν : MeasureTheory.Measure K) [MeasureTheory.NullSingletonClass ν] [MeasureTheory.NullSingletonClass μ] (z : K),
+  (μ.prod ν).restrict {p | p.1 ≠ 0 ∧ p.2 ≠ 0 ∧ p.2 ^ 2 - p.1 * z ≠ 0} = μ.prod ν
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar_real_maximalIdeal_pow : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K]
+  [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (n : ℕ),
+  (FourierJacobi.Measure.integersHaar K).real ↑(IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ^ n) =
+    (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv._proof_7 : ∀ (tail : Bool) (n : ℕ × ℕ × ℕ),
+  (-↑n.1 - 1, ↑n.2.1, if tail = true then -↑n.2.2 - 1 else ↑n.2.2).1 < 0 ∧
+    0 ≤ (-↑n.1 - 1, ↑n.2.1, if tail = true then -↑n.2.2 - 1 else ↑n.2.2).2.1 ∧
+      if tail = true then (-↑n.1 - 1, ↑n.2.1, if tail = true then -↑n.2.2 - 1 else ↑n.2.2).2.2 < 0
+      else 0 ≤ (-↑n.1 - 1, ↑n.2.1, if tail = true then -↑n.2.2 - 1 else ↑n.2.2).2.2
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.coordinates_determinant_ae._simp_1_1 : ∀ {α : Type u_1} {F : Type u_3}
+  [inst : FunLike F (Set α) ENNReal] [inst_1 : MeasureTheory.OuterMeasureClass F α] {μ : F} {p : α → Prop},
+  (∀ᵐ (a : α) ∂μ, p a) = (μ {a | ¬p a} = 0)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integralUnits_measurableSet : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [BorelSpace K],
+  MeasurableSet (FourierJacobi.Measure.integralUnits K)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.maximalIdeal_ne_bot : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ≠ ⊥
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_minima_finite : ∀ {K : Type u_1} [inst : Field K] (v : AddValuation K (WithTop ℤ))
+  (a x y z : K),
+  a ≠ 0 →
+    FourierJacobi.Valuations.matrixMinimum v (FourierJacobi.LocalMatrix.g a x y z) ≠ ⊤ ∧
+      FourierJacobi.Valuations.matrixMinimum v
+          (FourierJacobi.LocalMatrix.secondCompound (FourierJacobi.LocalMatrix.g a x y z)) ≠
+        ⊤
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integralShell.eq_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (n : ℕ),
+  FourierJacobi.Measure.integralShell K n =
+    ↑(IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ^ n) \
+      ↑(IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ^ (n + 1))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.hasSum_i0_case6 : ∀ (t d U V T : ℂ),
+  ‖t ^ 2‖ < 1 →
+    ‖T * V * t / d‖ < 1 →
+      HasSum (fun p => FourierJacobi.Analysis.i0Shell t d U V T ↑p) (T * V * t / d / (1 - T * V * t / d))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv._proof_1 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬(0 ≤ ↑n.1 ∧ -2 * ↑n.1 ≤ ↑n.2.1 - 2 * ↑n.1 ∧ -↑n.1 ≤ ↑n.2.2 - ↑n.1) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar_real_collisionTail : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (n : ℕ),
+  (FourierJacobi.Measure.integersHaar K).real (FourierJacobi.Measure.collisionTail K n) =
+    (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.localField_t2Space : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [IsNonarchimedeanLocalField K], T2Space K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitCenteredTail : (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] →
+        [IsNonarchimedeanLocalField K] →
+          (↥(ValuativeRel.valuation K).integer)ˣ → ℕ → Set ↥(ValuativeRel.valuation K).integer
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.mem_integralUnits_iff._simp_1_3 : ∀ {α : Type u_2} {a : α} [inst : Monoid α],
+  (a ∈ nonunits α) = ¬IsUnit a
+AXIOMS [propext]
+NEW FourierJacobi.Measure.integersCompact._proof_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [IsNonarchimedeanLocalField K], IsCompact {x | (ValuativeRel.valuation K) x ≤ 1}
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.hasSum_i0_case1 : ∀ (t d U V T : ℂ),
+  ‖t ^ 2‖ < 1 →
+    ‖d * T * V * t‖ < 1 → HasSum (fun p => FourierJacobi.Analysis.i0Shell t d U V T ↑p) (1 - d * T * V * t)⁻¹
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv._proof_5 : ∀ (k j h : ℤ),
+  k < 0 → 0 ≤ j → 0 ≤ h → ¬(-↑(-k - 1).toNat - 1 = k ∧ ↑j.toNat = j ∧ ↑h.toNat = h) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_cancellation_depth_nonnegative : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (x y z : K) (r j h c : ℤ),
+  v x = ↑j → v y = ↑h → v z = ↑(-r) → 2 * h = j - r → v (y ^ 2 / (x * z) - 1) = ↑c → 0 ≤ c
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.cartanEliminator.eq_1 : ∀ {K : Type u_1} [inst : Field K] (d b₁ b₂ c : K),
+  FourierJacobi.Valuations.cartanEliminator d b₁ b₂ c =
+    !![1, -b₁ / d, -b₂ / d, -c / d; 0, 1, 0, -b₂ / d; 0, 0, 1, b₁ / d; 0, 0, 0, 1]
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Analysis.hasSum_i0_case2_regionTerm : ∀ (t d U V T : ℂ),
+  ‖t ^ 2‖ < 1 →
+    ‖d * T * V * t‖ < 1 →
+      ‖T * U * t ^ 4‖ < 1 →
+        HasSum (fun p => FourierJacobi.Analysis.i0Shell t d U V T ↑p)
+          (FourierJacobi.Algebra.regionTerm1 t d (T * U) (T * V) (1 - d * (T * V) * t) (1 - T * V * t / d)
+            (1 - (T * V) ^ 2 * t ^ 2) (1 - T * U * t ^ 2) (1 - T * U * t ^ 4))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.geometric_norm_summable : ∀ (z : ℂ), ‖z‖ < 1 → Summable fun n => ‖z ^ n‖
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_ratio_tail : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (π : ↥(ValuativeRel.valuation K).integer),
+  IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer = Ideal.span {π} →
+    ∀ (a : (↥(ValuativeRel.valuation K).integer)ˣ) (n : ℕ),
+      FourierJacobi.Measure.unitConditionalMass K
+          {x |
+            x ∈ FourierJacobi.Measure.integralUnits K ∧
+              (ValuativeRel.valuation K) (↑↑a / ↑x - 1) ≤ (ValuativeRel.valuation K) ↑π ^ (n + 1)} =
+        (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n / (↑(FourierJacobi.Measure.residueCardinality K) - 1)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass.eq_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (s : Set ↥(ValuativeRel.valuation K).integer),
+  FourierJacobi.Measure.unitConditionalMass K s =
+    (FourierJacobi.Measure.integersHaar K).real (s ∩ FourierJacobi.Measure.integralUnits K) /
+      (FourierJacobi.Measure.integersHaar K).real (FourierJacobi.Measure.integralUnits K)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.valuation_ratio_sub_one._simp_1_2 : ∀ {α : Type u_2} [inst : Zero α] [inst_1 : OfNat α 3]
+  [NeZero 3], (3 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.unitConditionalMass_unitCenteredTail._simp_1_7 : ∀ {M₀ : Type u_1} [inst : Mul M₀]
+  [inst_1 : Zero M₀] [NoZeroDivisors M₀] {a b : M₀}, a ≠ 0 → b ≠ 0 → (a * b = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.integersHaar_isAddLeftInvariant : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K], (FourierJacobi.Measure.integersHaar K).IsAddLeftInvariant
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.matrixMinimum.eq_1 : ∀ {K : Type u_1} [inst : Field K] {n m : ℕ}
+  (v : AddValuation K (WithTop ℤ)) (A : Matrix (Fin n) (Fin m) K),
+  FourierJacobi.Valuations.matrixMinimum v A = Finset.univ.inf fun i => Finset.univ.inf fun j => v (A i j)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.discreteValuation.congr_simp : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  FourierJacobi.Valuations.discreteValuation K = FourierJacobi.Valuations.discreteValuation K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.matrixMinimum : {K : Type u_1} →
+  [inst : Field K] → {n m : ℕ} → AddValuation K (WithTop ℤ) → Matrix (Fin n) (Fin m) K → WithTop ℤ
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass : (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] →
+        [IsNonarchimedeanLocalField K] →
+          [inst_4 : MeasurableSpace K] → [BorelSpace K] → Set ↥(ValuativeRel.valuation K).integer → ℝ
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.residueCardinality_one_lt : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K], 1 < FourierJacobi.Measure.residueCardinality K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.hasSum_three_geometric : ∀ (C a b c : ℂ),
+  ‖a‖ < 1 →
+    ‖b‖ < 1 → ‖c‖ < 1 → HasSum (fun n => C * a ^ n.1 * b ^ n.2.1 * c ^ n.2.2) (C * (1 - a)⁻¹ * (1 - b)⁻¹ * (1 - c)⁻¹)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar_isProbabilityMeasure : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K]
+  [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K],
+  MeasureTheory.IsProbabilityMeasure (FourierJacobi.Measure.integersHaar K)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.discreteValuation_surjective : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  Function.Surjective ⇑(FourierJacobi.Valuations.discreteValuation K)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv : (tail : Bool) → ℕ × ℕ × ℕ ≃ FourierJacobi.Analysis.I0NegativeRow tail
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.additiveHaar_isAddHaarMeasure : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K], (FourierJacobi.Measure.additiveHaar K).IsAddHaarMeasure
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersCompact : (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] → [IsNonarchimedeanLocalField K] → TopologicalSpace.PositiveCompacts K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.residueCardinality_pos : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K], 0 < FourierJacobi.Measure.residueCardinality K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.minorListMinimum : {K : Type u_1} →
+  [inst : Field K] → AddValuation K (WithTop ℤ) → K → K → K → K → WithTop ℤ
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.I0NegativeRow : Bool → Type
+AXIOMS []
+NEW FourierJacobi.Measure.additiveHaar.congr_simp : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K], FourierJacobi.Measure.additiveHaar K = FourierJacobi.Measure.additiveHaar K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.residueCardinality.eq_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  FourierJacobi.Measure.residueCardinality K = Nat.card (IsLocalRing.ResidueField ↥(ValuativeRel.valuation K).integer)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_determinant_valuation._simp_1_3 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 4] [NeZero 4], (4 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.actual_entry_minimum : ∀ {K : Type u_1} [inst : Field K] (v : AddValuation K (WithTop ℤ))
+  (a x y z : K),
+  FourierJacobi.Valuations.matrixMinimum v (FourierJacobi.LocalMatrix.g a x y z) =
+    FourierJacobi.Valuations.entryListMinimum v a x y z
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRow_cartan._proof_1_3 : ∀ (n : ℕ × ℕ × ℕ), ¬-↑n.1 ≤ ↑n.2.2 - ↑n.1 → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.entryMinimum.eq_1 : ∀ (r k j h : ℤ),
+  FourierJacobi.Valuations.entryMinimum r k j h =
+    if r = 0 then FourierJacobi.Valuations.baseMinimum k j h else min (FourierJacobi.Valuations.baseMinimum k j h) (-r)
+AXIOMS []
+NEW FourierJacobi.Measure.integersHaar_univ : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K], (FourierJacobi.Measure.integersHaar K) Set.univ = 1
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv._proof_4 : ∀ (k j h : ℕ),
+  ¬((-(-↑k - 1) - 1).toNat = k ∧ (↑j).toNat = j ∧ (-(-↑h - 1) - 1).toNat = h) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar_singleton : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (x : ↥(ValuativeRel.valuation K).integer), (FourierJacobi.Measure.integersHaar K) {x} = 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRow_cartan._proof_1_2 : ∀ (n : ℕ × ℕ × ℕ), ¬0 ≤ ↑n.2.1 → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.extendedNegLog_exp : ∀ (n : ℤ),
+  FourierJacobi.Valuations.extendedNegLog (WithZero.exp n) = ↑(-n)
+AXIOMS [Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRow_cartan._proof_1_5 : ∀ (n : ℕ × ℕ × ℕ), -↑n.1 ≤ -↑n.1 - ↑n.2.2 - 1 → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth_zero._simp_1_6 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 2] [NeZero 2], (2 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionTail._simp_1_5 : ∀ {M₀ : Type u_1} [inst : Mul M₀]
+  [inst_1 : Zero M₀] [NoZeroDivisors M₀] {a b : M₀}, a ≠ 0 → b ≠ 0 → (a * b = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.integersHaar_collisionTail : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (n : ℕ),
+  (FourierJacobi.Measure.integersHaar K) (FourierJacobi.Measure.collisionTail K n) =
+    (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case6_reindexed._proof_1_2 : ∀ (n : ℕ × ℕ × ℕ), ¬-↑n.1 - 1 = -↑(n.1 + 1) → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv._proof_1 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬(-↑n.1 - 1 < 0 ∧ 0 ≤ ↑n.2.1 ∧ 0 ≤ ↑n.2.2) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv._proof_10 : ∀ (tail : Bool)
+  (p : FourierJacobi.Analysis.I0PositiveRow tail),
+  ⟨(↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+              (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+        ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                  (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.1 -
+          2 *
+            ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                  (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1,
+        if tail = true then
+          -↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                      (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1 -
+              ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                      (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+            1
+        else
+          ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                    (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).2.2 -
+            ↑((↑p).1.toNat, ((↑p).2.1 + 2 * (↑p).1).toNat,
+                  (if tail = true then -(↑p).1 - (↑p).2.2 - 1 else (↑p).2.2 + (↑p).1).toNat).1),
+      ⋯⟩ =
+    p
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_entry_minimum_le_zero : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (a x y z : K),
+  FourierJacobi.Valuations.matrixMinimum v (FourierJacobi.LocalMatrix.g a x y z) ≤ 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar_real_integralUnits : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K],
+  (FourierJacobi.Measure.integersHaar K).real (FourierJacobi.Measure.integralUnits K) =
+    1 - (↑(FourierJacobi.Measure.residueCardinality K))⁻¹
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.collisionTail_subset_units : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] {n : ℕ},
+  0 < n → FourierJacobi.Measure.collisionTail K n ⊆ FourierJacobi.Measure.integralUnits K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.additiveHaar_uniformizer_pow : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (π : ↥(ValuativeRel.valuation K).integer),
+  IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer = Ideal.span {π} →
+    ∀ (n : ℕ),
+      (FourierJacobi.Measure.additiveHaar K) ((fun u => ↑π ^ n * ↑u) '' Set.univ) =
+        (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.I0PositiveRow : Bool → Type
+AXIOMS []
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv._proof_8 : ∀ (tail : Bool) (n : ℕ × ℕ × ℕ),
+  ((↑⟨(↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1), ⋯⟩).1.toNat,
+      ((↑⟨(↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1), ⋯⟩).2.1 +
+          2 * (↑⟨(↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1), ⋯⟩).1).toNat,
+      (if tail = true then
+          -(↑⟨(↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1), ⋯⟩).1 -
+              (↑⟨(↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1), ⋯⟩).2.2 -
+            1
+        else
+          (↑⟨(↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1), ⋯⟩).2.2 +
+            (↑⟨(↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1), ⋯⟩).1).toNat) =
+    n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionTail._simp_1_2 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 2] [NeZero 2], (2 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.actual_determinant_valuation._simp_1_5 : ∀ {M₀ : Type u_1} [inst : MonoidWithZero M₀]
+  {a : M₀} [IsReduced M₀] (n : ℕ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.collisionTail._proof_2 : ∀ (K : Type u_1) [inst : Field K], OneMemClass (Subring K) K
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionTail._simp_1_4 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 4] [NeZero 4], (4 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.baseMinimum.eq_1 : ∀ (k j h : ℤ),
+  FourierJacobi.Valuations.baseMinimum k j h = min (min (min (min (min 0 k) (-k)) (k + j)) h) (k + h)
+AXIOMS []
+NEW FourierJacobi.Measure.integralUnits._proof_1 : ∀ (K : Type u_1) [inst : Field K], SubsemiringClass (Subring K) K
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.discreteValuation._proof_1 : IsOrderedCancelMonoid (Multiplicative ℤ)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv._proof_4 : ∀ (k j h : ℕ),
+  ¬((↑k).toNat = k ∧ (↑j - 2 * ↑k + 2 * ↑k).toNat = j ∧ (-↑k - (-↑k - ↑h - 1) - 1).toNat = h) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.extendedNegLog_nonnegative._proof_1_1 : ∀ (n : ℤ), ¬(0 ≤ -n ↔ n ≤ 0) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.firstColumnShape : {K : Type u_1} →
+  [Field K] → K → K → K → K → K → K → K → K → K → K → Matrix (Fin 4) (Fin 4) K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.localFieldValuation : (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] → [IsNonarchimedeanLocalField K] → AddValuation K (WithTop ℤ)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.localFieldValuation_nonnegative_iff : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (x : K),
+  0 ≤ (FourierJacobi.Valuations.localFieldValuation K) x ↔ x ∈ (ValuativeRel.valuation K).integer
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_minor_minimum_integer_nonzero : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (a x y z : K) (r k j h c : ℤ),
+  r ≠ 0 →
+    a ≠ 0 →
+      v a = ↑k →
+        v x = ↑j →
+          v y = ↑h →
+            v z = ↑(-r) →
+              v (y ^ 2 - x * z) = ↑(FourierJacobi.Valuations.determinantValuation r j h c) →
+                FourierJacobi.Valuations.matrixMinimum v
+                    (FourierJacobi.LocalMatrix.secondCompound (FourierJacobi.LocalMatrix.g a x y z)) =
+                  ↑(FourierJacobi.Valuations.minorMinimum r k j h c)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth._simp_1_10 : ∀ {M₀ : Type u_1} [inst : MonoidWithZero M₀]
+  {a : M₀} [IsReduced M₀] (n : ℕ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.unitConditionalMass_of_subset : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K],
+  ∀ s ⊆ FourierJacobi.Measure.integralUnits K,
+    FourierJacobi.Measure.unitConditionalMass K s =
+      (FourierJacobi.Measure.integersHaar K).real s / (1 - (↑(FourierJacobi.Measure.residueCardinality K))⁻¹)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth._simp_1_6 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 2] [NeZero 2], (2 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Algebra.regionTerm0.eq_1 : ∀ {K : Type u_1} [inst : Field K] (t d U V P N E F G : K),
+  FourierJacobi.Algebra.regionTerm0 t d U V P N E F G = (P ^ 1)⁻¹
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integralUnits : (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] → [IsNonarchimedeanLocalField K] → Set ↥(ValuativeRel.valuation K).integer
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.residueCardinality.congr_simp : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  FourierJacobi.Measure.residueCardinality K = FourierJacobi.Measure.residueCardinality K
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv._proof_2 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬(-↑n.1 - 1 < 0 ∧ 0 ≤ ↑n.2.1 ∧ -↑n.2.2 - 1 < 0) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar_integralUnits : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K],
+  (FourierJacobi.Measure.integersHaar K) (FourierJacobi.Measure.integralUnits K) =
+    1 - (↑(FourierJacobi.Measure.residueCardinality K))⁻¹
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.residueCardinality_isPrimePow : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K],
+  IsPrimePow (FourierJacobi.Measure.residueCardinality K)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth_zero._simp_1_7 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 3] [NeZero 3], (3 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.valuation_ratio_sub_one._simp_1_4 : ∀ {M₀ : Type u_1} [inst : Mul M₀] [inst_1 : Zero M₀]
+  [NoZeroDivisors M₀] {a b : M₀}, a ≠ 0 → b ≠ 0 → (a * b = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Analysis.i0_case1_reindexed._proof_1_1 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬3 * ↑n.1 + 2 * (↑n.2.1 - 2 * ↑n.1) + 2 * (↑n.2.2 - ↑n.1) + 3 * 0 + 4 * ↑n.1 = ↑(n.1 + 2 * n.2.1 + 2 * n.2.2) → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth._proof_1_5 : ∀ (n : ℕ), ¬n + 2 = n + 1 + 1 → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.determinantValuation.eq_1 : ∀ (r j h c : ℤ),
+  FourierJacobi.Valuations.determinantValuation r j h c = if 2 * h = j - r then 2 * h + c else min (2 * h) (j - r)
+AXIOMS []
+NEW FourierJacobi.Valuations.actual_determinant_valuation._simp_1_2 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 3] [NeZero 3], (3 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.cartanEliminator : {K : Type u_1} → [Field K] → K → K → K → K → Matrix (Fin 4) (Fin 4) K
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth_zero._proof_1_2 : ¬0 < 1 → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.extendedNegLog_antitone : Antitone FourierJacobi.Valuations.extendedNegLog
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv._proof_7 : ∀ (tail : Bool) (n : ℕ × ℕ × ℕ),
+  0 ≤ (↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1).1 ∧
+    -2 * (↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1).1 ≤
+        (↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1).2.1 ∧
+      if tail = true then
+        (↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1).2.2 <
+          -(↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1).1
+      else
+        -(↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1).1 ≤
+          (↑n.1, ↑n.2.1 - 2 * ↑n.1, if tail = true then -↑n.1 - ↑n.2.2 - 1 else ↑n.2.2 - ↑n.1).2.2
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.localFieldValuation._proof_3 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (x y : K),
+  min (FourierJacobi.Valuations.extendedNegLog ((FourierJacobi.Valuations.discreteValuation K) x))
+      (FourierJacobi.Valuations.extendedNegLog ((FourierJacobi.Valuations.discreteValuation K) y)) ≤
+    FourierJacobi.Valuations.extendedNegLog ((FourierJacobi.Valuations.discreteValuation K) (x + y))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Algebra.regionTerm6.eq_1 : ∀ {K : Type u_1} [inst : Field K] (t d U V P N E F G : K),
+  FourierJacobi.Algebra.regionTerm6 t d U V P N E F G =
+    U * V * (G ^ 1)⁻¹ * (N ^ 1)⁻¹ * (d ^ 1)⁻¹ * t ^ 5 * (1 + -1 * t ^ 2)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRow_cartan : ∀ (tail : Bool) (n : ℕ × ℕ × ℕ),
+  FourierJacobi.Valuations.cartanIndices 0 (↑((FourierJacobi.Analysis.i0PositiveRowEquiv tail) n)).1
+      (↑((FourierJacobi.Analysis.i0PositiveRowEquiv tail) n)).2.1
+      (↑((FourierJacobi.Analysis.i0PositiveRowEquiv tail) n)).2.2 0 =
+    if tail = true then (2 * ↑n.2.2 + 2, ↑n.1) else (0, ↑n.1)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.collisionTail._proof_1 : ∀ (K : Type u_1) [inst : Field K], AddSubgroupClass (Subring K) K
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Valuations.extendedNegLog_max : ∀ (x y : WithZero (Multiplicative ℤ)),
+  FourierJacobi.Valuations.extendedNegLog (max x y) =
+    min (FourierJacobi.Valuations.extendedNegLog x) (FourierJacobi.Valuations.extendedNegLog y)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.additiveHaar_nullSingletonClass : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K], MeasureTheory.NullSingletonClass (FourierJacobi.Measure.additiveHaar K)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.determinant_zero_section : ∀ {K : Type u_1} [inst : Field K] (y z : K),
+  z ≠ 0 → {x | y ^ 2 - x * z = 0} = {y ^ 2 / z}
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth._simp_1_12 : ∀ {R : Type u_1} [inst : AddMonoidWithOne R]
+  [CharZero R] (n : ℕ), (↑n + 1 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.extendedNegLog_mul._proof_1_1 : ∀ (a b : ℤ), ¬-(a + b) = -a + -b → False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionTail : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K]
+  [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (n : ℕ),
+  FourierJacobi.Measure.unitConditionalMass K (FourierJacobi.Measure.collisionTail K (n + 1)) =
+    (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n / (↑(FourierJacobi.Measure.residueCardinality K) - 1)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth_zero._simp_1_9 : ∀ {M₀ : Type u_1} [inst : Mul M₀]
+  [inst_1 : Zero M₀] [NoZeroDivisors M₀] {a b : M₀}, a ≠ 0 → b ≠ 0 → (a * b = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv._proof_3 : ∀ (k j h : ℕ),
+  ¬((↑k).toNat = k ∧ (↑j - 2 * ↑k + 2 * ↑k).toNat = j ∧ (↑h - ↑k + ↑k).toNat = h) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.valuation_ratio_sub_one._simp_1_1 : ∀ {α : Type u_2} [inst : Zero α] [inst_1 : OfNat α 2]
+  [NeZero 2], (2 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth_zero : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K]
+  [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K],
+  FourierJacobi.Measure.unitConditionalMass K
+      (FourierJacobi.Measure.integralUnits K \ FourierJacobi.Measure.collisionTail K 1) =
+    (↑(FourierJacobi.Measure.residueCardinality K) - 2) / (↑(FourierJacobi.Measure.residueCardinality K) - 1)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_collisionDepth._simp_1_11 : ∀ {G₀ : Type u_3} [inst : GroupWithZero G₀]
+  {a : G₀} (n : ℤ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.actual_entry_minimum_integer_nonzero : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (a x y z : K) (r k j h : ℤ),
+  r ≠ 0 →
+    v a = ↑k →
+      v x = ↑j →
+        v y = ↑h →
+          v z = ↑(-r) →
+            FourierJacobi.Valuations.matrixMinimum v (FourierJacobi.LocalMatrix.g a x y z) =
+              ↑(FourierJacobi.Valuations.entryMinimum r k j h)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.localField_coordinates_determinant_ae : ∀ (K : Type u_1) [inst : Field K]
+  [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K] [IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [BorelSpace K] (μ : MeasureTheory.Measure K) [μ.IsAddHaarMeasure] (z : K),
+  ∀ᵐ (p : K × K) ∂μ.prod μ, p.1 ≠ 0 ∧ p.2 ≠ 0 ∧ p.2 ^ 2 - p.1 * z ≠ 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.entryListMinimum.eq_1 : ∀ {K : Type u_1} [inst : Field K] (v : AddValuation K (WithTop ℤ))
+  (a x y z : K),
+  FourierJacobi.Valuations.entryListMinimum v a x y z =
+    min (min (min (min (min (min 0 (v a)) (v a⁻¹)) (v (a * x))) (v y)) (v (a * y))) (v z)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.measurableSet_determinant_zero : ∀ {K : Type u_1} [inst : Field K]
+  [inst_1 : TopologicalSpace K] [IsTopologicalRing K] [SecondCountableTopology K] [T2Space K]
+  [inst_5 : MeasurableSpace K] [BorelSpace K] (z : K), MeasurableSet {p | p.2 ^ 2 - p.1 * z = 0}
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Valuations.localFieldValuation_ne_top : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] (x : K),
+  (FourierJacobi.Valuations.localFieldValuation K) x ≠ ⊤ ↔ x ≠ 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.hasSum_i0_case7 : ∀ (t d U V T : ℂ),
+  ‖t ^ 2‖ < 1 →
+    ‖T * V * t / d‖ < 1 →
+      ‖T * U * t ^ 4‖ < 1 →
+        HasSum (fun p => FourierJacobi.Analysis.i0Shell t d U V T ↑p)
+          (T * V * t / d * (T * U * t ^ 4) * (1 - t ^ 2) / ((1 - T * U * t ^ 4) * (1 - T * V * t / d)))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.coordinates_determinant_ae_with_parameter : ∀ {K : Type u_1} [inst : Field K]
+  [inst_1 : TopologicalSpace K] [IsTopologicalRing K] [SecondCountableTopology K] [T2Space K]
+  [inst_5 : MeasurableSpace K] [BorelSpace K] (μ ν : MeasureTheory.Measure K) [MeasureTheory.NullSingletonClass ν]
+  [MeasureTheory.NullSingletonClass μ] {A : Type u_2} [inst_9 : MeasurableSpace A] (ρ : MeasureTheory.Measure A)
+  (z : K), ∀ᵐ (p : A × K × K) ∂ρ.prod (μ.prod ν), p.2.1 ≠ 0 ∧ p.2.2 ≠ 0 ∧ p.2.2 ^ 2 - p.2.1 * z ≠ 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.valuation_ratio_sub_one._simp_1_3 : ∀ {α : Type u_2} [inst : Zero α] [inst_1 : OfNat α 4]
+  [NeZero 4], (4 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Valuations.twice_entry_minimum_le_minor : ∀ {K : Type u_1} [inst : Field K]
+  (v : AddValuation K (WithTop ℤ)) (A : Matrix (Fin 4) (Fin 4) K),
+  FourierJacobi.Valuations.matrixMinimum v A + FourierJacobi.Valuations.matrixMinimum v A ≤
+    FourierJacobi.Valuations.matrixMinimum v (FourierJacobi.LocalMatrix.secondCompound A)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integralShell._proof_1 : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K],
+  IsScalarTower ↥(ValuativeRel.valuation K).integer ↥(ValuativeRel.valuation K).integer
+    ↥(ValuativeRel.valuation K).integer
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0PositiveRowEquiv._proof_6 : ∀ (k j h : ℤ),
+  0 ≤ k →
+    -2 * k ≤ j →
+      h < -k → ¬(↑k.toNat = k ∧ ↑(j + 2 * k).toNat - 2 * ↑k.toNat = j ∧ -↑k.toNat - ↑(-k - h - 1).toNat - 1 = h) → False
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar_maximalIdeal_pow : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (n : ℕ),
+  (FourierJacobi.Measure.integersHaar K) ↑(IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ^ n) =
+    (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_unitCenteredTail._simp_1_4 : ∀ {α : Type u_2} [inst : Zero α]
+  [inst_1 : OfNat α 2] [NeZero 2], (2 = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Analysis.i0NegativeRowEquiv._proof_8 : ∀ (tail : Bool) (n : ℕ × ℕ × ℕ),
+  ((-(↑⟨(-↑n.1 - 1, ↑n.2.1, if tail = true then -↑n.2.2 - 1 else ↑n.2.2), ⋯⟩).1 - 1).toNat,
+      (↑⟨(-↑n.1 - 1, ↑n.2.1, if tail = true then -↑n.2.2 - 1 else ↑n.2.2), ⋯⟩).2.1.toNat,
+      (if tail = true then -(↑⟨(-↑n.1 - 1, ↑n.2.1, if tail = true then -↑n.2.2 - 1 else ↑n.2.2), ⋯⟩).2.2 - 1
+        else (↑⟨(-↑n.1 - 1, ↑n.2.1, if tail = true then -↑n.2.2 - 1 else ↑n.2.2), ⋯⟩).2.2).toNat) =
+    n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Analysis.i0_case7_reindexed._proof_1_1 : ∀ (n : ℕ × ℕ × ℕ),
+  ¬3 * (-↑n.1 - 1) + 2 * ↑n.2.1 + 2 * (-↑n.2.2 - 1) + 3 * (2 * ↑n.2.2 + 2) + 4 * (↑n.1 + 1) =
+        ↑(n.1 + 1 + 2 * n.2.1 + 4 * (n.2.2 + 1)) →
+    False
+AXIOMS [propext, Quot.sound]
+NEW FourierJacobi.Analysis.i0NegativeRow_cartan : ∀ (tail : Bool) (n : ℕ × ℕ × ℕ),
+  FourierJacobi.Valuations.cartanIndices 0 (↑((FourierJacobi.Analysis.i0NegativeRowEquiv tail) n)).1
+      (↑((FourierJacobi.Analysis.i0NegativeRowEquiv tail) n)).2.1
+      (↑((FourierJacobi.Analysis.i0NegativeRowEquiv tail) n)).2.2 0 =
+    if tail = true then (2 * ↑n.2.2 + 2, ↑n.1 + 1) else (0, ↑n.1 + 1)
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.additiveHaar_maximalIdeal_pow : ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K]
+  [inst_2 : TopologicalSpace K] [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K]
+  [inst_5 : BorelSpace K] (n : ℕ),
+  (FourierJacobi.Measure.additiveHaar K)
+      ((fun x => ↑x) '' ↑(IsLocalRing.maximalIdeal ↥(ValuativeRel.valuation K).integer ^ n)) =
+    (↑(FourierJacobi.Measure.residueCardinality K))⁻¹ ^ n
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.unitConditionalMass_unitCenteredTail._simp_1_8 : ∀ {M₀ : Type u_1} [inst : MonoidWithZero M₀]
+  {a : M₀} [IsReduced M₀] (n : ℕ), a ≠ 0 → (a ^ n = 0) = False
+AXIOMS [propext]
+NEW FourierJacobi.Analysis.hasSum_i0_case1_regionTerm : ∀ (t d U V T : ℂ),
+  ‖t ^ 2‖ < 1 →
+    ‖d * T * V * t‖ < 1 →
+      HasSum (fun p => FourierJacobi.Analysis.i0Shell t d U V T ↑p)
+        (FourierJacobi.Algebra.regionTerm0 t d (T * U) (T * V) (1 - d * (T * V) * t) (1 - T * V * t / d)
+          (1 - (T * V) ^ 2 * t ^ 2) (1 - T * U * t ^ 2) (1 - T * U * t ^ 4))
+AXIOMS [propext, Classical.choice, Quot.sound]
+NEW FourierJacobi.Measure.integersHaar : (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] →
+        [IsNonarchimedeanLocalField K] →
+          [inst_4 : MeasurableSpace K] → [BorelSpace K] → MeasureTheory.Measure ↥(ValuativeRel.valuation K).integer
+AXIOMS [propext, Classical.choice, Quot.sound]
+Axiom audit passed for 1546 FourierJacobi declarations.
+Of these, 258 declarations belong to the new v2 modules.
+'FourierJacobi.Algebra.fifty_region_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierJacobi.Algebra.finite_sum_principal_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierJacobi.Algebra.finite_principal_inverseSqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierJacobi.Algebra.finite_principal_square_roots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierJacobi.Algebra.finite_sum_special_negative_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierJacobi.Algebra.finite_special_negative_unitary' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierJacobi.Algebra.finite_special_negative_inverseSqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierJacobi.Valuations.tableTwo_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierJacobi.Analysis.height_damping_tendsto_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FourierJacobi.Analysis.normalized_intertwiner_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]

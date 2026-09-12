@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-09-11T14:06:16.9999493+01:00",
+  "snapshots": [
+    {
+      "snapshot": "fourier-jacobi-theorem-2-2",
+      "files_checked": 46,
+      "all_match": true
+    },
+    {
+      "snapshot": "fourier-jacobi-theorem-2-2-v2",
+      "files_checked": 66,
+      "all_match": true
+    }
+  ],
+  "source_material_count": 5,
+  "source_material_all_match": true
+}

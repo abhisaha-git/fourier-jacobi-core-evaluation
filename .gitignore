@@ -1,0 +1,9 @@
+/.lake/
+/.tools/
+/.cache/
+/.config/
+/.local/
+/.tmp/
+/build/
+/.venv/
+__pycache__/

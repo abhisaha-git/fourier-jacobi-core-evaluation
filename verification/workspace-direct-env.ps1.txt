@@ -1,0 +1,10 @@
+# Development checks only; final verification uses Lake.
+. (Join-Path $PSScriptRoot '../../scripts/lean-env.ps1')
+$fjManagedBin = Join-Path $leanProjectRoot '.tools/elan/toolchains/leanprover--lean4---v4.33.1/bin'
+$env:PATH = "$fjManagedBin;$env:PATH"
+$fjManifest = Get-Content (Join-Path $PSScriptRoot 'lake-manifest.json') -Raw | ConvertFrom-Json
+$fjPaths = @((Join-Path $PSScriptRoot '../fourier-jacobi-lean/.lake/build/lib/lean'))
+foreach ($fjPackage in $fjManifest.packages) {
+    $fjPaths += Join-Path $leanProjectRoot ".lake/packages/$($fjPackage.name)/.lake/build/lib/lean"
+}
+$env:LEAN_PATH = $fjPaths -join ';'

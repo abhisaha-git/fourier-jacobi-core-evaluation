@@ -1,0 +1,439 @@
+STATEMENT FourierJacobiPdfV1.D1_eq
+TYPE ∀ (q : ℝ) (a b d : ℂ), FourierJacobiPdfV1.D1 q a b d = FourierJacobi.Analysis.paperD1 q a b d
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.C_coe
+TYPE ∀ (q : ℝ), ↑(FourierJacobiPdfV1.C q) = FourierJacobi.Analysis.paperC q
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.part_iii
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (a b d : ℂ),
+  2 < ↑(FourierJacobi.Measure.residueCardinality K) →
+    ‖a‖ = 1 →
+      ‖b‖ = 1 →
+        FourierJacobi.Algebra.inverseSqrt ↑(FourierJacobi.Measure.residueCardinality K) < ‖d‖ →
+          ‖d‖ ≤ 1 →
+            a ≠ 1 →
+              b ≠ 1 →
+                a ≠ b →
+                  a * b ≠ 1 →
+                    ∀ (π : Kˣ),
+                      (FourierJacobi.Valuations.localFieldValuation K) ↑π = 1 →
+                        ↑(FourierJacobiPdfV1.C ↑(FourierJacobi.Measure.residueCardinality K)) *
+                                FourierJacobiPdfV1.D1 (↑(FourierJacobi.Measure.residueCardinality K)) a b d *
+                              FourierJacobiPdfV1.D2 (↑(FourierJacobi.Measure.residueCardinality K)) a b d ≠
+                            0 ∧
+                          FourierJacobiPdfV1.I K a b d 1 π =
+                              FourierJacobiPdfV1.E (↑(FourierJacobi.Measure.residueCardinality K)) a b d ∧
+                            Filter.Tendsto (fun T => FourierJacobiPdfV1.I K a b d T π) (nhdsWithin 1 (Set.Ioo 0 1))
+                                (nhds (FourierJacobiPdfV1.I K a b d 1 π)) ∧
+                              2 / (↑↑(FourierJacobi.Measure.residueCardinality K) + 1) *
+                                    FourierJacobiPdfV1.I K a b d 1 π =
+                                  2 / (↑↑(FourierJacobi.Measure.residueCardinality K) + 1) *
+                                    FourierJacobiPdfV1.E (↑(FourierJacobi.Measure.residueCardinality K)) a b d ∧
+                                Filter.Tendsto
+                                  (fun T =>
+                                    2 / (↑↑(FourierJacobi.Measure.residueCardinality K) + 1) *
+                                      FourierJacobiPdfV1.I K a b d T π)
+                                  (nhdsWithin 1 (Set.Ioo 0 1))
+                                  (nhds
+                                    (2 / (↑↑(FourierJacobi.Measure.residueCardinality K) + 1) *
+                                      FourierJacobiPdfV1.E (↑(FourierJacobi.Measure.residueCardinality K)) a b d))
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.roots.eq_1
+TYPE ∀ (a b : ℂ),
+  FourierJacobiPdfV1.roots a b =
+    ![![b * a⁻¹, b⁻¹, a⁻¹ * b⁻¹, a⁻¹], ![a * b⁻¹, a⁻¹, a⁻¹ * b⁻¹, b⁻¹], ![a⁻¹ * b⁻¹, b, b * a⁻¹, a⁻¹],
+      ![a * b, a⁻¹, b * a⁻¹, b], ![a⁻¹ * b⁻¹, a, a * b⁻¹, b⁻¹], ![a * b, b⁻¹, a * b⁻¹, a], ![b * a⁻¹, a, a * b, b],
+      ![a * b⁻¹, b, a * b, a]]
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.U.eq_1
+TYPE ∀ (a b : ℂ), FourierJacobiPdfV1.U a b = ![a * b, a * b, a * b⁻¹, a * b⁻¹, b * a⁻¹, b * a⁻¹, a⁻¹ * b⁻¹, a⁻¹ * b⁻¹]
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.minor_index_coverage
+TYPE ∀ (i j : Fin 4), i < j ↔ ∃ k, FourierJacobi.LocalMatrix.indexPairs k = (i, j)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.matrix
+TYPE {K : Type u_1} → [Field K] → K → K → K → K → Matrix (Fin 4) (Fin 4) K
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.measure_normalizations
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K],
+  (FourierJacobi.Measure.additiveHaar K).IsAddHaarMeasure ∧
+    (FourierJacobi.Measure.paperMultiplicativeHaar K).IsHaarMeasure ∧
+      (FourierJacobi.Measure.additiveHaar K) ↑(ValuativeRel.valuation K).integer = 1 ∧
+        (FourierJacobi.Measure.paperMultiplicativeHaar K) ↑(FourierJacobi.Measure.valuationRingUnits K) =
+          ENNReal.ofReal (1 - (↑(FourierJacobi.Measure.residueCardinality K))⁻¹)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.prefactor_eq
+TYPE ∀ (q : ℝ) (r : Fin 3), FourierJacobiPdfV1.prefactor q r = FourierJacobi.Analysis.coreIntegralPrefactor q r
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.minima_finite
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] (p : FourierJacobi.Valuations.KernelPoint K),
+  FourierJacobi.Valuations.matrixMinimum (FourierJacobi.Valuations.localFieldValuation K)
+        (FourierJacobiPdfV1.matrix (↑p.1) p.2.1 p.2.2.1 p.2.2.2) ≠
+      ⊤ ∧
+    FourierJacobi.Valuations.matrixMinimum (FourierJacobi.Valuations.localFieldValuation K)
+        (FourierJacobi.LocalMatrix.secondCompound (FourierJacobiPdfV1.matrix (↑p.1) p.2.1 p.2.2.1 p.2.2.2)) ≠
+      ⊤
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.D2
+TYPE ℝ → ℂ → ℂ → ℂ → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.I_eq
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (a b d : ℂ) (T : ℝ)
+  (π : Kˣ), FourierJacobiPdfV1.I K a b d T π = FourierJacobi.Analysis.paperExplicitHaarCore K a b d T π
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.matrix.eq_1
+TYPE ∀ {K : Type u_1} [inst : Field K] (a x y z : K),
+  FourierJacobiPdfV1.matrix a x y z = !![1, 0, y, z; 0, a, a * x, a * y; 0, 0, a⁻¹, 0; 0, 0, 0, 1]
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.roots_regular
+TYPE ∀ (a b : ℂ),
+  ‖a‖ = 1 →
+    ‖b‖ = 1 → a ≠ 1 → b ≠ 1 → a ≠ b → a * b ≠ 1 → ∀ (i : Fin 8) (j : Fin 4), 1 - FourierJacobiPdfV1.roots a b i j ≠ 0
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.f.congr_simp
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] (a a_1 : ℂ),
+  a = a_1 →
+    ∀ (b b_1 : ℂ),
+      b = b_1 →
+        ∀ (d d_1 : ℂ),
+          d = d_1 →
+            ∀ (T T_1 : ℝ),
+              T = T_1 →
+                ∀ (π π_1 : Kˣ),
+                  π = π_1 →
+                    ∀ (r r_1 : Fin 3),
+                      r = r_1 →
+                        ∀ (p p_1 : FourierJacobi.Analysis.HaarPoint K),
+                          p = p_1 →
+                            FourierJacobiPdfV1.f K a b d T π r p = FourierJacobiPdfV1.f K a_1 b_1 d_1 T_1 π_1 r_1 p_1
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.f
+TYPE (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] →
+        [IsNonarchimedeanLocalField K] → ℂ → ℂ → ℂ → ℝ → Kˣ → Fin 3 → FourierJacobi.Analysis.HaarPoint K → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.A
+TYPE ℝ → ℂ → ℂ → Fin 8 → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.positive_limit
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (a b : ℂ) (π : Kˣ),
+  Filter.Tendsto
+    (fun T =>
+      (1 - 1) / (↑↑(FourierJacobi.Measure.residueCardinality K) + 1) *
+        FourierJacobiPdfV1.I K a b (↑(FourierJacobi.Algebra.inverseSqrt ↑(FourierJacobi.Measure.residueCardinality K)))
+          T π)
+    (nhdsWithin 1 (Set.Ioo 0 1)) (nhds 0)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.f_eq
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] (a b d : ℂ) (T : ℝ) (π : Kˣ) (r : Fin 3),
+  FourierJacobiPdfV1.f K a b d T π r =
+    FourierJacobi.Analysis.explicitCoreIntegrand K (↑(FourierJacobi.Measure.residueCardinality K)) a b d T
+      (FourierJacobi.Analysis.coreCentral K π r)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.N1
+TYPE ℝ → ℂ → ℂ → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.C_eq_poincare
+TYPE ∀ (q : ℝ), 0 ≤ q → FourierJacobiPdfV1.C q = FourierJacobi.Algebra.poincare (FourierJacobi.Algebra.inverseSqrt q)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.minima_eq
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] (p : FourierJacobi.Valuations.KernelPoint K),
+  ↑(FourierJacobi.Valuations.kernelEntryIndex K p) =
+      FourierJacobi.Valuations.matrixMinimum (FourierJacobi.Valuations.localFieldValuation K)
+        (FourierJacobiPdfV1.matrix (↑p.1) p.2.1 p.2.2.1 p.2.2.2) ∧
+    ↑(FourierJacobi.Valuations.kernelMinorIndex K p) =
+      FourierJacobi.Valuations.matrixMinimum (FourierJacobi.Valuations.localFieldValuation K)
+        (FourierJacobi.LocalMatrix.secondCompound (FourierJacobiPdfV1.matrix (↑p.1) p.2.1 p.2.2.1 p.2.2.2))
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.C.eq_1
+TYPE ∀ (q : ℝ), FourierJacobiPdfV1.C q = 1 + 2 * q⁻¹ + 2 * q⁻¹ ^ 2 + 2 * q⁻¹ ^ 3 + q⁻¹ ^ 4
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.U
+TYPE ℂ → ℂ → Fin 8 → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.roots
+TYPE ℂ → ℂ → Fin 8 → Fin 4 → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.instBorelSpaceUnits_publications
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [BorelSpace K], BorelSpace Kˣ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.part_ii
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (a b d : ℂ) (T : ℝ),
+  2 < ↑(FourierJacobi.Measure.residueCardinality K) →
+    ‖a‖ = 1 →
+      ‖b‖ = 1 →
+        0 < T →
+          T ≤ 1 →
+            FourierJacobi.Algebra.inverseSqrt ↑(FourierJacobi.Measure.residueCardinality K) ≤ ‖d‖ →
+              ‖d‖ ≤ 1 →
+                T * FourierJacobi.Algebra.inverseSqrt ↑(FourierJacobi.Measure.residueCardinality K) < ‖d‖ →
+                  ∀ (π : Kˣ),
+                    (FourierJacobi.Valuations.localFieldValuation K) ↑π = 1 →
+                      ∀ (r : Fin 3),
+                        Measurable (FourierJacobiPdfV1.f K a b d T π r) ∧
+                          MeasureTheory.Integrable (FourierJacobiPdfV1.f K a b d T π r)
+                            (FourierJacobi.Analysis.paperCoreMeasure K)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.U_eq
+TYPE ∀ (a b : ℂ), FourierJacobiPdfV1.U a b = FourierJacobi.Algebra.weylU a b
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.product_measure
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K],
+  FourierJacobi.Analysis.paperCoreMeasure K =
+    (FourierJacobi.Measure.paperMultiplicativeHaar K).prod
+      ((FourierJacobi.Measure.additiveHaar K).prod (FourierJacobi.Measure.additiveHaar K))
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.I.congr_simp
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (a a_1 : ℂ),
+  a = a_1 →
+    ∀ (b b_1 : ℂ),
+      b = b_1 →
+        ∀ (d d_1 : ℂ),
+          d = d_1 →
+            ∀ (T T_1 : ℝ),
+              T = T_1 →
+                ∀ (π π_1 : Kˣ), π = π_1 → FourierJacobiPdfV1.I K a b d T π = FourierJacobiPdfV1.I K a_1 b_1 d_1 T_1 π_1
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.Phi
+TYPE (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] →
+        [IsNonarchimedeanLocalField K] → ℂ → ℂ → FourierJacobi.Valuations.KernelPoint K → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.E.eq_1
+TYPE ∀ (q : ℝ) (a b d : ℂ),
+  FourierJacobiPdfV1.E q a b d =
+    (1 + a) ^ 2 * (1 + b) ^ 2 / (a * b) * (1 - (↑q)⁻¹) * FourierJacobiPdfV1.N1 q a b * FourierJacobiPdfV1.N2 q a b /
+      (↑(FourierJacobiPdfV1.C q) * FourierJacobiPdfV1.D1 q a b d * FourierJacobiPdfV1.D2 q a b d)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.part_iv
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (a b ε : ℂ),
+  2 < ↑(FourierJacobi.Measure.residueCardinality K) →
+    ε = 1 ∨ ε = -1 →
+      ‖a‖ = 1 →
+        ‖b‖ = 1 →
+          a ≠ 1 →
+            b ≠ 1 →
+              a ≠ b →
+                a * b ≠ 1 →
+                  a ≠ ε →
+                    b ≠ ε →
+                      ∀ (π : Kˣ),
+                        (FourierJacobi.Valuations.localFieldValuation K) ↑π = 1 →
+                          (∀ T ∈ Set.Ioo 0 1,
+                              ∀ (r : Fin 3),
+                                MeasureTheory.Integrable
+                                  (FourierJacobiPdfV1.f K a b
+                                    (ε *
+                                      ↑(FourierJacobi.Algebra.inverseSqrt
+                                          ↑(FourierJacobi.Measure.residueCardinality K)))
+                                    T π r)
+                                  (FourierJacobi.Analysis.paperCoreMeasure K)) ∧
+                            ↑(FourierJacobiPdfV1.C ↑(FourierJacobi.Measure.residueCardinality K)) *
+                                    FourierJacobiPdfV1.D1 (↑(FourierJacobi.Measure.residueCardinality K)) a b
+                                      (ε *
+                                        ↑(FourierJacobi.Algebra.inverseSqrt
+                                            ↑(FourierJacobi.Measure.residueCardinality K))) *
+                                  FourierJacobiPdfV1.D2 (↑(FourierJacobi.Measure.residueCardinality K)) a b
+                                    (ε *
+                                      ↑(FourierJacobi.Algebra.inverseSqrt
+                                          ↑(FourierJacobi.Measure.residueCardinality K))) ≠
+                                0 ∧
+                              Filter.Tendsto
+                                (fun T =>
+                                  (1 - ε) / (↑↑(FourierJacobi.Measure.residueCardinality K) + 1) *
+                                    FourierJacobiPdfV1.I K a b
+                                      (ε *
+                                        ↑(FourierJacobi.Algebra.inverseSqrt
+                                            ↑(FourierJacobi.Measure.residueCardinality K)))
+                                      T π)
+                                (nhdsWithin 1 (Set.Ioo 0 1))
+                                (nhds
+                                  ((1 - ε) / (↑↑(FourierJacobi.Measure.residueCardinality K) + 1) *
+                                    FourierJacobiPdfV1.E (↑(FourierJacobi.Measure.residueCardinality K)) a b
+                                      (ε *
+                                        ↑(FourierJacobi.Algebra.inverseSqrt
+                                            ↑(FourierJacobi.Measure.residueCardinality K)))))
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.E_eq
+TYPE ∀ (q : ℝ) (a b d : ℂ), FourierJacobiPdfV1.E q a b d = FourierJacobi.Analysis.paperE q a b d
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.I.eq_1
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (a b d : ℂ) (T : ℝ)
+  (π : Kˣ),
+  FourierJacobiPdfV1.I K a b d T π =
+    ∑ r,
+      FourierJacobiPdfV1.prefactor (↑(FourierJacobi.Measure.residueCardinality K)) r *
+        ∫ (p : FourierJacobi.Analysis.HaarPoint K),
+          FourierJacobiPdfV1.f K a b d T π r p ∂FourierJacobi.Analysis.paperCoreMeasure K
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.part_i
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] (a b : ℂ),
+  2 < ↑(FourierJacobi.Measure.residueCardinality K) →
+    ‖a‖ = 1 →
+      ‖b‖ = 1 →
+        ∀ (p : FourierJacobi.Valuations.KernelPoint K),
+          (2 * FourierJacobi.Valuations.kernelEntryIndex K p ≤ FourierJacobi.Valuations.kernelMinorIndex K p ∧
+              FourierJacobi.Valuations.kernelMinorIndex K p ≤ FourierJacobi.Valuations.kernelEntryIndex K p ∧
+                FourierJacobi.Valuations.kernelEntryIndex K p ≤ 0) ∧
+            (0 ≤ FourierJacobi.Valuations.kernelN K p ∧
+                0 ≤ FourierJacobi.Valuations.kernelB K p ∧
+                  0 ≤ FourierJacobi.Valuations.kernelEll K p ∧ 0 ≤ FourierJacobi.Valuations.kernelHeight K p) ∧
+              FourierJacobi.Valuations.kernelEll K p = 2 * FourierJacobi.Valuations.kernelN K p ∧
+                FourierJacobi.Valuations.kernelHeight K p = -FourierJacobi.Valuations.kernelEntryIndex K p ∧
+                  ‖FourierJacobiPdfV1.Phi K a b p‖ ≤
+                    (∑ i, ‖FourierJacobiPdfV1.A (↑(FourierJacobi.Measure.residueCardinality K)) a b i‖) /
+                        FourierJacobiPdfV1.C ↑(FourierJacobi.Measure.residueCardinality K) *
+                      ↑(FourierJacobi.Measure.residueCardinality K) ^
+                        (-3 * FourierJacobi.Valuations.kernelN K p - 2 * FourierJacobi.Valuations.kernelB K p)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.prefactor
+TYPE ℝ → Fin 3 → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.D1
+TYPE ℝ → ℂ → ℂ → ℂ → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.Phi.congr_simp
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] (a a_1 : ℂ),
+  a = a_1 →
+    ∀ (b b_1 : ℂ),
+      b = b_1 →
+        ∀ (p p_1 : FourierJacobi.Valuations.KernelPoint K),
+          p = p_1 → FourierJacobiPdfV1.Phi K a b p = FourierJacobiPdfV1.Phi K a_1 b_1 p_1
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.D2_eq
+TYPE ∀ (q : ℝ) (a b d : ℂ), FourierJacobiPdfV1.D2 q a b d = FourierJacobi.Analysis.paperD2 q a b d
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.V
+TYPE ℂ → ℂ → Fin 8 → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.positive_product
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [inst_5 : BorelSpace K] (a b : ℂ) (T : ℝ)
+  (π : Kˣ),
+  (1 - 1) / (↑↑(FourierJacobi.Measure.residueCardinality K) + 1) *
+      FourierJacobiPdfV1.I K a b (↑(FourierJacobi.Algebra.inverseSqrt ↑(FourierJacobi.Measure.residueCardinality K))) T
+        π =
+    0
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.part_i_measurable
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] [inst_4 : MeasurableSpace K] [BorelSpace K] (a b : ℂ),
+  Measurable (FourierJacobi.Valuations.kernelEntryIndex K) ∧
+    Measurable (FourierJacobi.Valuations.kernelMinorIndex K) ∧
+      Measurable (FourierJacobi.Valuations.kernelN K) ∧
+        Measurable (FourierJacobi.Valuations.kernelB K) ∧
+          Measurable (FourierJacobi.Valuations.kernelEll K) ∧
+            Measurable (FourierJacobi.Valuations.kernelHeight K) ∧ Measurable (FourierJacobiPdfV1.Phi K a b)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.V.eq_1
+TYPE ∀ (a b : ℂ), FourierJacobiPdfV1.V a b = ![a, b, a, b⁻¹, b, a⁻¹, b⁻¹, a⁻¹]
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.prefactor.eq_1
+TYPE ∀ (q : ℝ), FourierJacobiPdfV1.prefactor q = ![(1 - (↑q)⁻¹)⁻¹, ↑q, -↑q / (1 - (↑q)⁻¹)]
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.A_eq
+TYPE ∀ (q : ℝ),
+  0 ≤ q →
+    ∀ (a b : ℂ) (i : Fin 8),
+      FourierJacobiPdfV1.A q a b i = FourierJacobi.Algebra.weylWeights (↑(FourierJacobi.Algebra.inverseSqrt q)) a b i
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.C
+TYPE ℝ → ℝ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.N2
+TYPE ℝ → ℂ → ℂ → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.f.eq_1
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] (a b d : ℂ) (T : ℝ) (π : Kˣ) (r : Fin 3)
+  (p : FourierJacobi.Analysis.HaarPoint K),
+  FourierJacobiPdfV1.f K a b d T π r p =
+    d ^ FourierJacobi.Analysis.coreScaleExponent K p.1 *
+          ↑((↑(FourierJacobi.Measure.residueCardinality K) ^ (-FourierJacobi.Analysis.coreScaleExponent K p.1)).rpow
+              (3 / 2)) *
+        ↑T ^
+          FourierJacobi.Valuations.kernelHeight K
+            (FourierJacobi.Analysis.coreAtCentral K (FourierJacobiPdfV1.central K π r) p) *
+      FourierJacobiPdfV1.Phi K a b (FourierJacobi.Analysis.coreAtCentral K (FourierJacobiPdfV1.central K π r) p)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.A.eq_1
+TYPE ∀ (q : ℝ) (a b : ℂ) (i : Fin 8),
+  FourierJacobiPdfV1.A q a b i =
+    ∏ j, (1 - (↑q)⁻¹ * FourierJacobiPdfV1.roots a b i j) / (1 - FourierJacobiPdfV1.roots a b i j)
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.f._proof_1
+TYPE (2 + 1).AtLeastTwo
+AXIOMS [propext]
+STATEMENT FourierJacobiPdfV1.central.eq_1
+TYPE ∀ (K : Type u_1) [inst : Field K] (π : Kˣ), FourierJacobiPdfV1.central K π = ![0, (↑π)⁻¹, ↑π ^ (-2)]
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.V_eq
+TYPE ∀ (a b : ℂ), FourierJacobiPdfV1.V a b = FourierJacobi.Algebra.weylV a b
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.matrix_eq
+TYPE ∀ {K : Type u_1} [inst : Field K] (a x y z : K),
+  FourierJacobiPdfV1.matrix a x y z = FourierJacobi.LocalMatrix.g a x y z
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.I
+TYPE (K : Type u_1) →
+  [inst : Field K] →
+    [inst_1 : ValuativeRel K] →
+      [inst_2 : TopologicalSpace K] →
+        [IsNonarchimedeanLocalField K] → [inst_4 : MeasurableSpace K] → [BorelSpace K] → ℂ → ℂ → ℂ → ℝ → Kˣ → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.central_eq
+TYPE ∀ (K : Type u_1) [inst : Field K] (π : Kˣ) (r : Fin 3),
+  FourierJacobiPdfV1.central K π r = FourierJacobi.Analysis.coreCentral K π r
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.Phi_eq
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] (a b : ℂ) (p : FourierJacobi.Valuations.KernelPoint K),
+  FourierJacobiPdfV1.Phi K a b p =
+    FourierJacobi.Analysis.explicitWeylKernel K
+      (↑(FourierJacobi.Algebra.inverseSqrt ↑(FourierJacobi.Measure.residueCardinality K))) a b p
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.E
+TYPE ℝ → ℂ → ℂ → ℂ → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.C._proof_1
+TYPE (1 + 1).AtLeastTwo
+AXIOMS [propext]
+STATEMENT FourierJacobiPdfV1.central
+TYPE (K : Type u_1) → [inst : Field K] → Kˣ → Fin 3 → K
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.Phi.eq_1
+TYPE ∀ (K : Type u_1) [inst : Field K] [inst_1 : ValuativeRel K] [inst_2 : TopologicalSpace K]
+  [inst_3 : IsNonarchimedeanLocalField K] (a b : ℂ) (p : FourierJacobi.Valuations.KernelPoint K),
+  FourierJacobiPdfV1.Phi K a b p =
+    (↑(FourierJacobiPdfV1.C ↑(FourierJacobi.Measure.residueCardinality K)))⁻¹ *
+      ∑ i,
+        FourierJacobiPdfV1.A (↑(FourierJacobi.Measure.residueCardinality K)) a b i *
+              ↑(FourierJacobi.Algebra.inverseSqrt ↑(FourierJacobi.Measure.residueCardinality K)) ^
+                (6 * FourierJacobi.Valuations.kernelN K p + 4 * FourierJacobi.Valuations.kernelB K p) *
+            FourierJacobiPdfV1.U a b i ^ FourierJacobi.Valuations.kernelN K p *
+          FourierJacobiPdfV1.V a b i ^ FourierJacobi.Valuations.kernelB K p
+AXIOMS [propext, Classical.choice, Quot.sound]
+STATEMENT FourierJacobiPdfV1.satake
+TYPE ℂ → ℂ → Fin 4 → ℂ
+AXIOMS [propext, Classical.choice, Quot.sound]
+PDF statement implication audit passed: 62 named declarations; current-module private helpers also checked.

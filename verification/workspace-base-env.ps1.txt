@@ -1,0 +1,71 @@
+# Dot-source this file before running Lean/Lake in a PowerShell session.
+# All environment changes apply only to the current process and its children.
+$leanProjectRoot = Split-Path -Parent $PSScriptRoot
+
+$leanLocalEnvironment = @{
+    ELAN_HOME = Join-Path $leanProjectRoot '.tools/elan'
+    MATHLIB_CACHE_DIR = Join-Path $leanProjectRoot '.cache/mathlib'
+    LAKE_CACHE_DIR = Join-Path $leanProjectRoot '.cache/lake'
+    XDG_CACHE_HOME = Join-Path $leanProjectRoot '.cache'
+    XDG_CONFIG_HOME = Join-Path $leanProjectRoot '.config'
+    XDG_DATA_HOME = Join-Path $leanProjectRoot '.local/share'
+    TEMP = Join-Path $leanProjectRoot '.tmp'
+    TMP = Join-Path $leanProjectRoot '.tmp'
+    TMPDIR = Join-Path $leanProjectRoot '.tmp'
+}
+foreach ($leanSetting in $leanLocalEnvironment.GetEnumerator()) {
+    New-Item -ItemType Directory -Force -Path $leanSetting.Value | Out-Null
+    [Environment]::SetEnvironmentVariable($leanSetting.Key, $leanSetting.Value, 'Process')
+}
+
+# Prevent Lake from depending on a user-wide configuration file.
+New-Item -ItemType Directory -Force -Path (Join-Path $leanProjectRoot '.config/lake') | Out-Null
+$env:LAKE_CONFIG = Join-Path $leanProjectRoot '.config/lake/config.toml'
+
+$leanElanBin = Join-Path $env:ELAN_HOME 'bin'
+if (($env:PATH -split ';') -notcontains $leanElanBin) {
+    $env:PATH = "$leanElanBin;$env:PATH"
+}
+
+# Support long Windows paths and preserve dependency source line endings,
+# without writing to any Git configuration file.
+$leanGitSettings = @(
+    @{ Key = 'core.longpaths'; Value = 'true' }
+    @{ Key = 'core.autocrlf'; Value = 'false' }
+)
+
+# Codex's Windows sandbox may have a different account from the one that
+# downloaded dependencies. Trust only repositories directly inside this
+# project, in the process environment, rather than adding a global exception.
+$leanRepositoryPaths = @($leanProjectRoot)
+$leanPackagesPath = Join-Path $leanProjectRoot '.lake/packages'
+if (Test-Path -LiteralPath $leanPackagesPath) {
+    foreach ($leanPackageDirectory in (Get-ChildItem -LiteralPath $leanPackagesPath -Directory)) {
+        if (-not ($leanPackageDirectory.Attributes -band [System.IO.FileAttributes]::ReparsePoint)) {
+            $leanRepositoryPaths += $leanPackageDirectory.FullName
+        }
+    }
+}
+foreach ($leanRepositoryPath in $leanRepositoryPaths) {
+    if (Test-Path -LiteralPath (Join-Path $leanRepositoryPath '.git')) {
+        $leanGitSettings += @{ Key = 'safe.directory'; Value = $leanRepositoryPath.Replace('\', '/') }
+    }
+}
+
+foreach ($leanGitSetting in $leanGitSettings) {
+    $leanGitCount = 0
+    if ($env:GIT_CONFIG_COUNT) { $leanGitCount = [int]$env:GIT_CONFIG_COUNT }
+    $leanGitIndex = $leanGitCount
+    for ($leanIndex = 0; $leanIndex -lt $leanGitCount; $leanIndex++) {
+        $leanExistingKey = [Environment]::GetEnvironmentVariable("GIT_CONFIG_KEY_$leanIndex", 'Process')
+        $leanExistingValue = [Environment]::GetEnvironmentVariable("GIT_CONFIG_VALUE_$leanIndex", 'Process')
+        if ($leanExistingKey -eq $leanGitSetting.Key -and
+            ($leanGitSetting.Key -ne 'safe.directory' -or $leanExistingValue -eq $leanGitSetting.Value)) {
+            $leanGitIndex = $leanIndex
+            break
+        }
+    }
+    [Environment]::SetEnvironmentVariable("GIT_CONFIG_KEY_$leanGitIndex", $leanGitSetting.Key, 'Process')
+    [Environment]::SetEnvironmentVariable("GIT_CONFIG_VALUE_$leanGitIndex", $leanGitSetting.Value, 'Process')
+    if ($leanGitIndex -eq $leanGitCount) { $env:GIT_CONFIG_COUNT = [string]($leanGitCount + 1) }
+}

@@ -1,0 +1,33 @@
+{
+  "algorithm": "SHA256",
+  "recorded_at": "2026-09-11T16:44:30.9648044+01:00",
+  "files": {
+    "axioms.txt": "51d1538c4c59be99567b24ac244757abe7272596908293f3b66651e3fa6face1",
+    "baseline-v2-axioms.txt": "6cb9f4ba63ff628b5c13e6c17fe302611bb3e1e529cdff39ff7681b8f7a75b99",
+    "baseline-v2-build.txt": "4f4e6b17fc72f89babc4556d20e77840ff976cfd0d886bc4caa719c0356107d2",
+    "build.txt": "d28797477c326e031b6bd0e23c926bedbf95ad2bafb8cfe68610b79ccfa07538",
+    "check-summary.json": "ed51e169d6fdfeb3e4c21cd3c7ad26ea52b75c4462ebddb52ea477f8b43800cd",
+    "checked-lean-sha256.json": "852cb397a0c1dd88c839a13a9cf9cebc055a074af12d238974ddf8e70d328c34",
+    "dependencies.json": "37e45a2ee506e1bb5d3d65bd68b580e27852884d02b1798e7d7c0efb464b5a93",
+    "lean-version.txt": "ed48af7b3a60bededd7d6981799a85b0c864758b5c5d0aa7159900b8680aaf2f",
+    "main-hypotheses.txt": "eb4c03ca5e4d107cb1f46b430895c061de70456de702457338edc7acb9867770",
+    "output-paths.json": "7cfba7d4c1c162ec1f0fef484793faf05d3d553f42aff129104ea0ea20b86266",
+    "pdf-statement-audit-v1.md": "5b85ec858b24d26c514d136792e9964fb4887a241ba34c0a773a70a2a25024aa",
+    "pdf-statement-v1-axioms.txt": "51d1538c4c59be99567b24ac244757abe7272596908293f3b66651e3fa6face1",
+    "pdf-statement-v1-build.txt": "46c04c6b25dba987c28f3a5e55f8981a04d78f915bf588587d79f25706f4d1dc",
+    "pdf-statement-v1-checks.json": "076b0997888723d3a7d9aa51ddf885f7bf322713dd718b23c527f5c75fa2fbda",
+    "pdf-statement-v1-implication.txt": "b744a2286a2ad09049a8be49438c5e9f9cb0b378ccb1a9a1cd6f607b8aeb3afc",
+    "pdf-statement-v1-qa.json": "a8cad4b92ec45f46afd2288106774d07d51ec843b738aced3a2ded8c1ee8aa56",
+    "pdf-statement-v1-tex-build.txt": "6e42d2b1bb809b6e781fdba80ffd31552d0034010c797be43bcf6f83a7720b00",
+    "pre-pdf-record-sha256-v1.json": "45b4b9fe8492707f27a5999aac7fd9bb5cfdc150aa34f069c6e4a4b3d7cf8915",
+    "pre-pdf-source-sha256-v1.json": "802655b1c5c3ce826ef1c3179ce219df2b0f4a2537e664d44b7949b119332cf1",
+    "preservation-recheck.json": "5d41eb98d3283e82a43cbd80675649a4900e3fed9e1318a876643d6d3dbb6441",
+    "row-restorations.txt": "79d9f7312e28bd7b8c49af260db42f87c9fde17e565b2edef6aa2326afd45f90",
+    "source-preservation.json": "a77082632c954d4d93a6bd6a36f4cfbb60e5431de52a48e86324c7c515022188",
+    "source-record-check.txt": "aa926bc0c438805c939b22923d49f5ef99616e72057e2b6a996c7a806732f9b6",
+    "source-sha256.json": "2d2ded7bf204e845c911691d903fa04edc36bd41536618f36d3e8ee6ce9ce6be",
+    "workspace-base-env.ps1.txt": "9c5e4f14e06167e07e0c937a4dfe45669e8d08aba1717e0c853793ece50fcb78",
+    "workspace-direct-env.ps1.txt": "42453169f1186b303524b792c8266515cb11ea7f01d26a34c831a75f6f8f4d0e",
+    "workspace-lakefile.toml": "949a849de343b30d9cafa746640f886cf3a6cca1832be01b6ca277db037ba4a9"
+  }
+}

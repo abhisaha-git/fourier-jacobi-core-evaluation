@@ -1,0 +1,3 @@
+SymPy 1.14.0: 50/50 restored transcriptions match exact stored fractions.
+Full TeX SHA256, all fifty unique labels and literal snippets match.
+Supplementary source comparison only; the Lean HasSum and Haar proofs are independent.

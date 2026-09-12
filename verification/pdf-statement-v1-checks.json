@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-09-11T16:44:30.7796740+01:00",
+  "result": "passed",
+  "scope": "Standalone PDF statement of the existing explicit-kernel Haar theorem; no spherical-coefficient identification",
+  "lean_toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib_revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "checked_publication": "publications/fourier-jacobi-core-evaluation",
+  "build_srcDir": "../../publications/fourier-jacobi-core-evaluation",
+  "environment_activation_each_shell": ". ./build/fourier-jacobi-core-lean/direct-env.ps1",
+  "commands": [
+    {
+      "command": "lake -d build/fourier-jacobi-core-lean build --wfail",
+      "exit_code": 0,
+      "jobs": 3164,
+      "output": "pdf-statement-v1-build.txt"
+    },
+    {
+      "command": "lake -d build/fourier-jacobi-core-lean env lean -DwarningAsError=true publications/fourier-jacobi-core-evaluation/Audit.lean",
+      "exit_code": 0,
+      "declarations": 4609,
+      "modules": 69,
+      "output": "pdf-statement-v1-axioms.txt"
+    },
+    {
+      "command": "lake -d build/fourier-jacobi-core-lean env lean -DwarningAsError=true publications/fourier-jacobi-core-evaluation/StatementAudit_v1.lean",
+      "exit_code": 0,
+      "named_declarations": 62,
+      "private_helpers_checked": true,
+      "output": "pdf-statement-v1-implication.txt"
+    },
+    {
+      "command": "& ./publications/fourier-jacobi-core-evaluation/scripts/build-formalized-theorem-v1.ps1 -WorkspaceRoot (Get-Location).Path",
+      "exit_code": 0,
+      "passes": 3,
+      "output": "pdf-statement-v1-tex-build.txt"
+    },
+    {
+      "command": "python publications/fourier-jacobi-core-evaluation/scripts/audit-formalized-theorem-v1.py --workspace-root WORKSPACE_ROOT",
+      "exit_code": 0,
+      "output": "pdf-statement-v1-qa.json"
+    }
+  ],
+  "allowed_foundational_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "unchanged_prior_proof_configuration_hashes": 74,
+  "proof_sources_changed": false,
+  "pdf_definition_transcription_and_implication_checked": true,
+  "pdf_to_transcription_review": "Manual review of complete TeX and all five rendered pages, with mechanically checked consequences",
+  "final_pdf_pages_visually_inspected": 5,
+  "final_reviewed_sha256": {
+    "formalized_theorem_v1.tex": "854ec609055c8e8c0d2c500120ee3747c0e7d548bcb42f76fe9fc0d7a028ea60",
+    "formalized_theorem_v1.pdf": "9027a2b47d933eaffff462bf49d856a3a73b9b14acf36118dc04504a322a039f",
+    "StatementAudit_v1.lean": "2dcefac96b47299dcb843cb27542aad1ebd8448780953b5aec252e99fa59c775"
+  },
+  "lean_compilation": "Inside sandbox",
+  "tex_compilation": "Sandbox process launch denied; necessary compilation used authorized narrow exception, all writable state inside workspace",
+  "new_installations_or_upgrades": false,
+  "hosted_ci_run": false,
+  "commit_push_or_external_publication": false
+}

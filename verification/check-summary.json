@@ -1,0 +1,38 @@
+{
+  "recorded_at": "2026-09-11T14:11:53.2917076+01:00",
+  "scope": "Stage A complete; Stage B actual explicit-kernel Haar theorem complete; Stage C spherical bridge unformalized",
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "environment": ". ./build/fourier-jacobi-core-lean/direct-env.ps1",
+  "build": {
+    "command": "lake -d build/fourier-jacobi-core-lean build --wfail",
+    "exit_code": 0,
+    "jobs": 3164,
+    "output": "build.txt",
+    "source_dir": "../../publications/fourier-jacobi-core-evaluation"
+  },
+  "audit": {
+    "command": "lake -d build/fourier-jacobi-core-lean env lean -DwarningAsError=true publications/fourier-jacobi-core-evaluation/Audit.lean",
+    "exit_code": 0,
+    "output": "axioms.txt",
+    "modules": 69,
+    "declarations": 4609,
+    "new_modules": 39,
+    "new_declarations": 3053,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "row_audit": {
+    "command": ".venv/Scripts/python.exe 'publications/fourier-jacobi-core-evaluation/scripts/verify-row-restorations.py' --source 'Fourier Jacobi project/section_2_expanded_complete.tex'",
+    "exit_code": 0,
+    "rows": 50,
+    "role": "supplementary source comparison, not proof certificate"
+  },
+  "sandbox_compilation": true,
+  "pins_changed": false,
+  "hosted_ci_run": false,
+  "license": "Pending owner choice; no LICENSE inherited from v2"
+}

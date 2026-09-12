@@ -1,0 +1,252 @@
+[
+  {
+    "central": 0,
+    "row": "1",
+    "expression": "1/P"
+  },
+  {
+    "central": 0,
+    "row": "2",
+    "expression": "U*t**4*(1 - t**2)/(G*P)"
+  },
+  {
+    "central": 0,
+    "row": "3",
+    "expression": "V*t**2*(1 - t**2)*(V + 1)/(E*P)"
+  },
+  {
+    "central": 0,
+    "row": "4",
+    "expression": "U*t**2*(1 - t**2)**2/(E*F*P)"
+  },
+  {
+    "central": 0,
+    "row": "5",
+    "expression": "U**2*t**6*(1 - t**2)**2/(F*G*P)"
+  },
+  {
+    "central": 0,
+    "row": "6",
+    "expression": "V*t/(N*d)"
+  },
+  {
+    "central": 0,
+    "row": "7",
+    "expression": "U*V*t**5*(1 - t**2)/(G*N*d)"
+  },
+  {
+    "central": 0,
+    "row": "8",
+    "expression": "V**2*t**3*(1 - t**2)*(V + 1)/(E*N*d)"
+  },
+  {
+    "central": 0,
+    "row": "9",
+    "expression": "U*V*t**3*(1 - t**2)**2/(E*F*N*d)"
+  },
+  {
+    "central": 0,
+    "row": "10",
+    "expression": "U**2*V*t**7*(1 - t**2)**2/(F*G*N*d)"
+  },
+  {
+    "central": 1,
+    "row": "1",
+    "expression": "U*d*t*(1 - t**2)/P"
+  },
+  {
+    "central": 1,
+    "row": "2",
+    "expression": "U*V*d*t**3*(1 - t**2)**2/(G*P)"
+  },
+  {
+    "central": 1,
+    "row": "3a",
+    "expression": "U*V*d*t**3*(1 - t**2)**2*(V + 1)/(E*P)"
+  },
+  {
+    "central": 1,
+    "row": "3b",
+    "expression": "U*V*d*t*(1 - 2*t**2)*(1 - t**2)**2/(E*P)"
+  },
+  {
+    "central": 1,
+    "row": "3c",
+    "expression": "V**2*d*t*(1 - t**2)**2/(E*P)"
+  },
+  {
+    "central": 1,
+    "row": "4",
+    "expression": "U**2*V*d*t**3*(1 - t**2)**3/(E*F*P)"
+  },
+  {
+    "central": 1,
+    "row": "5",
+    "expression": "U**2*V*d*t**5*(1 - t**2)**3/(F*G*P)"
+  },
+  {
+    "central": 1,
+    "row": "6a",
+    "expression": "V*t**2*(1 - t**2)"
+  },
+  {
+    "central": 1,
+    "row": "6b",
+    "expression": "U*t*(1 - t**2)/(N*d)"
+  },
+  {
+    "central": 1,
+    "row": "7",
+    "expression": "U*t**2*(1 - t**2)**2/(G*N)"
+  },
+  {
+    "central": 1,
+    "row": "8a",
+    "expression": "U*t**2*(1 - t**2)**2*(V + 1)/(E*N)"
+  },
+  {
+    "central": 1,
+    "row": "8b",
+    "expression": "U*(1 - 2*t**2)*(1 - t**2)**2/(E*N)"
+  },
+  {
+    "central": 1,
+    "row": "8c",
+    "expression": "V*(1 - t**2)**2/(E*N)"
+  },
+  {
+    "central": 1,
+    "row": "9",
+    "expression": "U**2*t**2*(1 - t**2)**3/(E*F*N)"
+  },
+  {
+    "central": 1,
+    "row": "10",
+    "expression": "U**2*t**4*(1 - t**2)**3/(F*G*N)"
+  },
+  {
+    "central": 2,
+    "row": "1a",
+    "expression": "-U**2*d**2*t**4/P"
+  },
+  {
+    "central": 2,
+    "row": "1b",
+    "expression": "-U*V*d*t**5"
+  },
+  {
+    "central": 2,
+    "row": "2",
+    "expression": "-U*V*d*t**3*(1 - t**2)/(G*P)"
+  },
+  {
+    "central": 2,
+    "row": "3a",
+    "expression": "-U**2*d*t**3*(1 - t**2)*(V*t**2 + 1)/(E*P)"
+  },
+  {
+    "central": 2,
+    "row": "3b",
+    "expression": "U**2*V*d*t**3*(1 - 2*t**2)*(t**2 - 1)/(E*P)"
+  },
+  {
+    "central": 2,
+    "row": "3c",
+    "expression": "-U*V**2*d*t**3*(t**2 - 1)**2/(E*P)"
+  },
+  {
+    "central": 2,
+    "row": "3d",
+    "expression": "V**3*d*t**3*(t**2 - 1)/(E*P)"
+  },
+  {
+    "central": 2,
+    "row": "4",
+    "expression": "-U**3*V*d*t**5*(1 - t**2)**2/(E*F*P)"
+  },
+  {
+    "central": 2,
+    "row": "5",
+    "expression": "-U**2*V*d*t**5*(t**2 - 1)**2/(F*G*P)"
+  },
+  {
+    "central": 2,
+    "row": "6a",
+    "expression": "-V**2*t**4"
+  },
+  {
+    "central": 2,
+    "row": "6aa",
+    "expression": "U*V*t**4*(t**2 - 1)"
+  },
+  {
+    "central": 2,
+    "row": "6aaa",
+    "expression": "U**2*t**4*(t**2 - 1)/G"
+  },
+  {
+    "central": 2,
+    "row": "6b",
+    "expression": "-U*V*t**5/d"
+  },
+  {
+    "central": 2,
+    "row": "6bb",
+    "expression": "U**2*t**3*(t**2 - 1)/d"
+  },
+  {
+    "central": 2,
+    "row": "6bbb",
+    "expression": "-U**2*V*t**5*(1 - t**2)**2/(G*d)"
+  },
+  {
+    "central": 2,
+    "row": "6c",
+    "expression": "-U**2*t**4/(N*d**2)"
+  },
+  {
+    "central": 2,
+    "row": "6cc",
+    "expression": "U**2*V*t**4*(t**2 - 1)/(N*d**2)"
+  },
+  {
+    "central": 2,
+    "row": "6ccc",
+    "expression": "-U**2*V**2*t**6*(t**2 - 1)**2/(G*N*d**2)"
+  },
+  {
+    "central": 2,
+    "row": "7",
+    "expression": "U*V*t**3*(t**2 - 1)/(G*N*d)"
+  },
+  {
+    "central": 2,
+    "row": "8a",
+    "expression": "U**2*t**4*(V + 1)*(t**2 - 1)/(E*N)"
+  },
+  {
+    "central": 2,
+    "row": "8b",
+    "expression": "U**2*t**2*(1 - 2*t**2)*(t**2 - 1)/(E*N)"
+  },
+  {
+    "central": 2,
+    "row": "8c",
+    "expression": "-U*V*t**2*(t**2 - 1)**2/(E*N)"
+  },
+  {
+    "central": 2,
+    "row": "8d",
+    "expression": "V**2*t**2*(t**2 - 1)/(E*N)"
+  },
+  {
+    "central": 2,
+    "row": "9",
+    "expression": "-U**3*t**4*(t**2 - 1)**2/(E*F*N)"
+  },
+  {
+    "central": 2,
+    "row": "10",
+    "expression": "-U**3*t**6*(t**2 - 1)**2/(F*G*N)"
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "checked_at_utc": "2026-09-11T15:39:16.484366+00:00",
+  "purpose": "Document QA only; implication proof is checked separately by Lean",
+  "pypdf_version": "6.10.0",
+  "page_count": 5,
+  "page_text_lengths": [
+    1373,
+    1327,
+    1502,
+    1339,
+    2160
+  ],
+  "self_contained_tex": true,
+  "resolved_reference_labels": [
+    "eq:E",
+    "eq:core",
+    "eq:integrand",
+    "eq:phi",
+    "eq:regular",
+    "eq:s",
+    "eq:special",
+    "thm:main"
+  ],
+  "external_pdf_actions": 0,
+  "internal_pdf_links": 15,
+  "compiler_warnings": [
+    "Package epstopdf Warning: Shell escape feature is not enabled."
+  ],
+  "compiler_outputs_inside_workspace": [
+    "build/fourier-jacobi-core-statement-v1/formalized_theorem_v1.aux",
+    "build/fourier-jacobi-core-statement-v1/formalized_theorem_v1.log",
+    "build/fourier-jacobi-core-statement-v1/formalized_theorem_v1.out",
+    "build/fourier-jacobi-core-statement-v1/formalized_theorem_v1.pdf"
+  ],
+  "delivered_pdf_matches_compiler_output": true,
+  "sha256": {
+    "formalized_theorem_v1.tex": "854ec609055c8e8c0d2c500120ee3747c0e7d548bcb42f76fe9fc0d7a028ea60",
+    "formalized_theorem_v1.pdf": "9027a2b47d933eaffff462bf49d856a3a73b9b14acf36118dc04504a322a039f",
+    "StatementAudit_v1.lean": "2dcefac96b47299dcb843cb27542aad1ebd8448780953b5aec252e99fa59c775"
+  },
+  "rendered_page_sha256": {
+    "page-1.png": "1baaabfa2d5186f0ef94ab07af00fed9141ef62cccd091054a84a92f19a96639",
+    "page-2.png": "979147fad32156420ef0c3468849b9296ecb47eae653efde5ce07446619e415a",
+    "page-3.png": "7cd6955e5ba00273d52f70eb82784aa09be17fe13b2190ebaa4235623847aace",
+    "page-4.png": "b7e645433f62250b65de2f3c44c80f6cd4bd9f07e0e51877779b221ce1a75a25",
+    "page-5.png": "9f07b666d9686c91c94ef8ad74ce2b85cf9027674877462bd1aa8877ba4e2889"
+  },
+  "visual_review": "Rendering hashes identify pages; manual review is recorded in the audit report",
+  "result": "passed"
+}
