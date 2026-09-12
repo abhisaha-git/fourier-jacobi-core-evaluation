@@ -1,6 +1,6 @@
 # Fourier–Jacobi core evaluation
 
-This Lean publication formalizes a substantial chunk of the local calculations in the paper "An explicit refined Gan--Gross--Prasad identity for Fourier--Jacobi periods of degree 2 Siegel cusp forms" by Biplab Paul, Ameya Pitale, Abhishek Saha, and Ralf Schmidt.
+This Lean publication formalizes a substantial chunk of the local calculations in the paper "An explicit refined Gan--Gross--Prasad identity for Fourier--Jacobi periods of degree 2 Siegel cusp forms" by Biplab Paul, Ameya Pitale, Abhishek Saha, and Ralf Schmidt. The paper is available at https://arxiv.org/abs/2608.26007
 
 The [complete formalized theorem, as a standalone PDF](formalized_theorem_v1.pdf)
 contains the full statement proved here: all field and scalar assumptions,
