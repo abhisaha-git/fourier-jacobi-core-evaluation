@@ -1,0 +1,5 @@
+PALOMAR THEOREM FourierJacobiPalomar.measure_normalizations: [propext, Classical.choice, Quot.sound]
+PALOMAR THEOREM FourierJacobiPalomar.integrability: [propext, Classical.choice, Quot.sound]
+PALOMAR THEOREM FourierJacobiPalomar.principal_evaluation: [propext, Classical.choice, Quot.sound]
+PALOMAR THEOREM FourierJacobiPalomar.special_abel_limit: [propext, Classical.choice, Quot.sound]
+Palomar Solution axiom/safety audit passed: 89 declarations.

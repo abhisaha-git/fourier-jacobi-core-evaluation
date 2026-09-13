@@ -168,5 +168,5 @@ reproduction scripts, ignore rules and automatic GitHub Lean checks. Build
 products and downloaded packages remain outside the publication and inside
 the workspace. The original paper, both expanded sections and v1/v2 snapshots
 are preserved. No commit, push, publication, or hosted CI run is claimed.
-No license choice was recorded in v2, so the LICENSE file remains the owner's
-outstanding packaging decision; no licensing choice was invented.
+No license choice was recorded in v2. The current repository contains the
+owner's Apache-2.0 license; see [the Palomar preparation record](../PALOMAR.md).

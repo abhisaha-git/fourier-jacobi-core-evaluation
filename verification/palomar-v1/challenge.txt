@@ -1,0 +1,6 @@
+⚠ [2666/2667] Built Challenge (13s)
+warning: ../../publications/fourier-jacobi-core-evaluation/Challenge.lean:164:8: declaration uses `sorry`
+warning: ../../publications/fourier-jacobi-core-evaluation/Challenge.lean:172:8: declaration uses `sorry`
+warning: ../../publications/fourier-jacobi-core-evaluation/Challenge.lean:182:8: declaration uses `sorry`
+warning: ../../publications/fourier-jacobi-core-evaluation/Challenge.lean:197:8: declaration uses `sorry`
+Build completed successfully (2667 jobs).

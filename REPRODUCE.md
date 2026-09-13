@@ -51,8 +51,11 @@ transcriptions and rederives the three restoration factors. The optional
 and literal final fractions. Neither Python nor this symbolic check is in the
 Lean proof trust chain.
 
-Choose the license before distributing the repository. This packaging decision
-does not change the mathematical statements or the local verification commands.
+The repository already selects Apache-2.0 in its root `LICENSE`.
+For the Palomar Challenge/Solution build, current source records, metadata
+checks and submission sequence, see [PALOMAR.md](PALOMAR.md). The older
+workspace commands above reproduce the original mathematical library; the
+current default standalone build additionally includes `Solution`.
 
 ## Standalone theorem PDF
 

@@ -111,7 +111,7 @@ At \(\delta=t\), the signed product is identically zero. No undamped endpoint
 integral is required or asserted.
 
 The source spherical-coefficient identification and wall extensions remain
-unproved; see [NEXT_STEPS.md](NEXT_STEPS.md) and [the bridge report](docs/bridge.md).
+unproved; see [the scope record](STATUS.md) and [the bridge report](docs/bridge.md).
 For current build/audit evidence and matching hashes, use
 [VERIFICATION.md](VERIFICATION.md). The full local build and exhaustive audit
 passed; no hosted CI run is claimed.

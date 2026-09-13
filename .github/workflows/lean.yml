@@ -1,4 +1,4 @@
-name: Verify implemented lemmas
+name: Verify proofs and Palomar package
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   proofs:
-    name: Build and audit implemented lemmas
+    name: Build proofs and audit Palomar statements
     runs-on: windows-latest
     timeout-minutes: 60
     defaults:
@@ -25,3 +25,18 @@ jobs:
         run: .\scripts\setup-lean.ps1
       - name: Check that dependency pins were preserved
         run: git diff --exit-code -- lean-toolchain lakefile.toml lake-manifest.json
+      - name: Select Python for metadata checks
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Create project-local metadata environment
+        run: |
+          $env:PIP_CACHE_DIR = Join-Path $PWD '.cache/pip'
+          $env:TEMP = Join-Path $PWD '.tmp'
+          $env:TMP = $env:TEMP
+          python -m venv .venv
+          if ($LASTEXITCODE -ne 0) { throw 'Virtual environment creation failed.' }
+          ./.venv/Scripts/python.exe -m pip install --disable-pip-version-check --only-binary=:all: -r scripts/requirements-palomar.txt
+          if ($LASTEXITCODE -ne 0) { throw 'Metadata dependency installation failed.' }
+      - name: Check metadata, statement agreement, source hygiene and clean commit
+        run: ./.venv/Scripts/python.exe scripts/check-palomar.py --require-clean

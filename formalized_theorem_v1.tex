@@ -1,0 +1,243 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,enumitem,microtype,fancyhdr}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+\hypersetup{pdftitle={Evaluation of an explicit local-field Haar core: complete formalized statement},pdfauthor={}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[enumerate]{leftmargin=*,itemsep=7pt,topsep=5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Explicit local integral evaluation}
+\fancyhead[R]{\small Complete statement, v1}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\mm}{\mathfrak m}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\Ph}{\Phi_0}
+\newcommand{\I}{\mathcal I}
+\newcommand{\E}{E_q}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}  [theorem] {Remark}
+\title{Evaluation of an explicit local integral}
+\author{}
+\date{Complete formalized statement\quad\textnormal{Version 1}}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\LARGE\bfseries Evaluation of an explicit local integral}\par\vspace{7pt}
+{\large Complete formalized statement}\par\vspace{4pt}
+{Version 1}
+\end{center}
+\vspace{5pt}
+
+This document specifies all data, definitions and hypotheses needed for the
+formalized theorem. The function $\Ph$ is defined by an explicit finite formula below.
+
+
+\section{Field, measures and scalar parameters}
+
+Let $F$ be a nonarchimedean local field. Equip it with its local-field topology
+and Borel $\sigma$-algebra, and equip $F^\times$ with the induced topology and
+Borel structure. Let
+\[
+ v:F\longrightarrow\Z\cup\{+\infty\}
+\]
+be its normalized additive valuation, defining the local-field topology:
+$v(0)=+\infty$ and
+$v(F^\times)=\Z$. Put
+\[
+ \OO=\{x\in F:v(x)\ge0\},\qquad
+ \mm=\{x\in F:v(x)>0\},\qquad q=\#(\OO/\mm).
+\]
+Assume $q>2$. Fix $\varpi\in F^\times$ with $v(\varpi)=1$, and set
+\[
+ \abs a_F=q^{-v(a)}\quad(a\in F^\times).
+\]
+Let $\sqrt q$ denote the positive real square root. Let $\mu$ be the normalized
+additive Haar measure on $F$ with $\mu(\OO)=1$, and let $\nu$ be the normalized
+multiplicative Haar measure on $F^\times$ with
+\[
+ \nu(\OO^\times)=(1-q^{-1}).
+\]
+ All integrals below
+use the product measure $\lambda=\nu\otimes(\mu\otimes\mu)$ on
+$F^\times\times(F\times F)$.
+
+Fix complex parameters $\alpha,\beta$ satisfying 
+\begin{equation}\label{eq:regular}
+ \abs\alpha=\abs\beta=1,\qquad
+ \alpha\ne1,\quad\beta\ne1,\quad\alpha\ne\beta,\quad\alpha\beta\ne1.
+\end{equation}
+
+
+\clearpage
+\section{The eight coefficients and the explicit kernel}
+
+Define 
+\begin{equation}\label{eq:C}
+ C_q=1+2q^{-1}+2q^{-2}+2q^{-3}+q^{-4},\qquad
+ R(z)=\frac{1-q^{-1}z}{1-z}.
+\end{equation}
+For each $0\le i\le7$, define complex numbers  $z_{i1},\ldots,z_{i4}$, $U_i,V_i$
+by the following table, and put $A_i=\prod_{j=1}^{4}R(z_{ij})$.
+\begin{center}
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}c c c c@{}}
+\toprule
+$i$ & $(z_{i1},z_{i2},z_{i3},z_{i4})$ & $U_i$ & $V_i$\\
+\midrule
+0 & $(\beta\alpha^{-1},\beta^{-1},\alpha^{-1}\beta^{-1},\alpha^{-1})$ & $\alpha\beta$ & $\alpha$\\
+1 & $(\alpha\beta^{-1},\alpha^{-1},\alpha^{-1}\beta^{-1},\beta^{-1})$ & $\alpha\beta$ & $\beta$\\
+2 & $(\alpha^{-1}\beta^{-1},\beta,\beta\alpha^{-1},\alpha^{-1})$ & $\alpha\beta^{-1}$ & $\alpha$\\
+3 & $(\alpha\beta,\alpha^{-1},\beta\alpha^{-1},\beta)$ & $\alpha\beta^{-1}$ & $\beta^{-1}$\\
+4 & $(\alpha^{-1}\beta^{-1},\alpha,\alpha\beta^{-1},\beta^{-1})$ & $\beta\alpha^{-1}$ & $\beta$\\
+5 & $(\alpha\beta,\beta^{-1},\alpha\beta^{-1},\alpha)$ & $\beta\alpha^{-1}$ & $\alpha^{-1}$\\
+6 & $(\beta\alpha^{-1},\alpha,\alpha\beta,\beta)$ & $\alpha^{-1}\beta^{-1}$ & $\beta^{-1}$\\
+7 & $(\alpha\beta^{-1},\beta,\alpha\beta,\alpha)$ & $\alpha^{-1}\beta^{-1}$ & $\alpha^{-1}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The hypotheses \eqref{eq:regular} make every denominator in this table's
+definition of $A_i$ nonzero.
+
+For $a\in F^\times$ and $x,y,z\in F$, form the matrix
+\begin{equation}\label{eq:matrix}
+g= g(a;x,y,z)=
+ \begin{pmatrix}
+ 1&0&y&z\\
+ 0&a&ax&ay\\
+ 0&0&a^{-1}&0\\
+ 0&0&0&1
+ \end{pmatrix}.
+\end{equation}
+For such a matrix $g$, define
+\begin{align}
+ u(g)&=\min_{1\le i,j\le4}v(g_{ij}),\label{eq:u}\\
+ s(g)&=\min_{\substack{1\le i_1<i_2\le4\\1\le j_1<j_2\le4}}
+ v\bigl(g_{i_1j_1}g_{i_2j_2}-g_{i_1j_2}g_{i_2j_1}\bigr).\label{eq:s}
+\end{align}
+The minimum in \eqref{eq:s} is over all $36$ two-by-two minors. The valuation
+of a zero entry or minor is $+\infty$.
+Both displayed minima are finite integers. Put
+\begin{equation}\label{eq:indices}
+ n(g)=u(g)-s(g),\quad B(g)=s(g)-2u(g),\quad
+ \ell(g)=2n(g),\quad H(g)=n(g)+B(g)=-u(g).
+\end{equation}
+Finally, \emph{define} the complex-valued function on these matrices by
+\begin{equation}\label{eq:phi}
+ \boxed{\displaystyle
+ \Ph\bigl(g(a;x,y,z)\bigr)
+ =\frac1{C_q}\sum_{i=0}^{7} A_i\,
+ (q^{-1/2})^{6n(g)+4B(g)}U_i^{n(g)}V_i^{B(g)}.}
+\end{equation}
+The notation $\Ph$ in this document means precisely \eqref{eq:phi}.
+
+\clearpage
+\section{Integrands and the closed expression}
+
+Set
+\begin{equation}\label{eq:central}
+ (z_0,z_1,z_2)=(0,\varpi^{-1},\varpi^{-2}),\qquad
+ (c_0,c_1,c_2)=((1-q^{-1})^{-1},q,-q/(1-q^{-1})).
+\end{equation}
+
+
+For $\delta\in\C^\times$, a real number $T>0$, and $r\in\{0,1,2\}$, define the function $ f_{r,T,\delta}$ on $F^\times \times F \times F$ by
+\begin{equation}\label{eq:integrand}
+ f_{r,T,\delta}(a,x,y)
+ =\delta^{v(a)}\bigl(q^{-v(a)}\bigr)^{3/2}
+ T^{H(g(a;x,y,z_r))}\Ph\bigl(g(a;x,y,z_r)\bigr).
+\end{equation}
+
+Whenever the  function in \eqref{eq:integrand} is \emph{absolutely integrable}, put
+\begin{equation}\label{eq:core}
+ \I_T(\delta)=\sum_{r=0}^{2}c_r
+ \int_{F^\times\times(F\times F)} f_{r,T,\delta}\,d\lambda.
+\end{equation}
+The theorem below proves absolute integrability on
+every parameter range where it uses \eqref{eq:core}.
+
+Let $\mathcal A=(\alpha,\alpha^{-1},\beta,\beta^{-1})$, regarded as an
+ordered tuple so that products retain multiplicities. Define
+\begin{align}
+ N_1&=\prod_{\zeta\in\mathcal A}(1-\zeta q^{-1}),\label{eq:N1}\\
+ N_2&=(1-\alpha\beta q^{-1})(1-\alpha^{-1}\beta q^{-1})
+ (1-\alpha\beta^{-1}q^{-1})(1-\alpha^{-1}\beta^{-1}q^{-1}),\label{eq:N2}\\
+ D_1(\delta)&=\prod_{\zeta\in\mathcal A}(1-\zeta\delta (q^{-1/2})),\label{eq:D1}\\
+ D_2(\delta)&=\prod_{\zeta\in\mathcal A}(1-\zeta\delta^{-1}(q^{-1/2})).\label{eq:D2}
+\end{align}
+Whenever its denominator is nonzero, define the quotient
+\begin{equation}\label{eq:E}
+ \boxed{\displaystyle
+ \E(\alpha,\beta,\delta)=
+ \frac{\dfrac{(1+\alpha)^2(1+\beta)^2}{\alpha\beta}
+       (1-q^{-1})N_1N_2}
+      {C_qD_1(\delta)D_2(\delta)}.}
+\end{equation}
+All denominators used in the theorem are proved nonzero under its hypotheses.
+
+Every limit denoted by $T\uparrow1$ below is a limit through
+\emph{real} $T$ satisfying $0<T<1$. 
+
+\clearpage
+\section{The formalized theorem}
+
+\begin{theorem}\label{thm:main}
+For every $\delta\in\C$ and real $T$ with
+\begin{equation}\label{eq:convergence}
+ q^{-1/2}\le\abs\delta\le1,\qquad 0<T\le1,\qquad T<\abs\delta q^{1/2},
+\end{equation}
+all three functions $f_{r,T,\delta}$, for $r \in \{0,1,2\}$, are measurable and absolutely
+integrable with respect to $\lambda$, and so $\I_T(\delta)$ is well defined and finite.  In particular, this holds for every
+$0<T<1$ on $q^{-1/2}\le\abs\delta\le1$, and for $T=1$ on $q^{-1/2}<\abs\delta\le1$. 
+
+Moreover, the following identities hold.
+\begin{enumerate}
+\item If $(q^{-1/2})<\abs\delta\le1$, then $C_qD_1(\delta)D_2(\delta)\ne0$ and
+\begin{equation}\label{eq:principal}
+ \boxed{\displaystyle
+ \lim_{T\uparrow1}\I_T(\delta)=\I_1(\delta) = \E(\alpha,\beta,\delta).}
+\end{equation}
+
+\item Let $\varepsilon\in\{1,-1\}$ and assume additionally
+\begin{equation}\label{eq:endpoint}
+ \alpha\ne\varepsilon,\qquad\beta\ne\varepsilon.
+\end{equation}
+Then
+$C_qD_1(\varepsilon (q^{-1/2}))D_2(\varepsilon (q^{-1/2}))\ne0$, and we have
+\begin{equation}\label{eq:special}
+ \boxed{\displaystyle
+ \lim_{T\uparrow1}\frac{1-\varepsilon}{q+1}\I_T(\varepsilon (q^{-1/2}))
+ =\frac{1-\varepsilon}{q+1}\E(\alpha,\beta,\varepsilon (q^{-1/2})).}
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+
+In part~(iv) of Theorem~\ref{thm:main}, the case $\varepsilon=1$
+is trivial and simply states $0=0$.
+In the case $\varepsilon=-1$, formula \eqref{eq:special} is the assertion
+\[
+ \lim_{T\uparrow1}\frac2{q+1}\I_T(-(q^{-1/2}))
+ =\frac2{q+1}\E(\alpha,\beta,-(q^{-1/2})).
+\]
+The theorem does not assert the existence of $I_1(\delta)$ at either endpoint
+$\delta=(q^{-1/2})$ or $\delta=-(q^{-1/2})$.
+\end{remark}
+
+\begin{remark}There are no additional analytic or representation-theoretic
+hypotheses behind Theorem~\ref{thm:main}. All definitions and assumptions used are stated in this document.
+\end{remark}
+
+
+\end{document}

@@ -1,5 +1,12 @@
 # Verification of the delivered core-evaluation publication
 
+This is the historical verification record for the original mathematical
+library and PDF statement. The current Palomar preparation record, including
+the additional Challenge/Solution files and current source hashes, is
+[verification/palomar-v1/README.md](verification/palomar-v1/README.md).
+The dated records below are retained unchanged as historical evidence; their
+old whole-repository hashes are not a claim about subsequently edited metadata.
+
 Verified locally on 11 September 2026 with the pinned project-local environment.
 The strongest checked scope is Stage B: actual explicit-kernel Haar evaluation,
 ordinary integrability, principal Abel convergence and the whole signed special

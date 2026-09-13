@@ -1,0 +1,16 @@
+{
+  "algorithm": "SHA256",
+  "files": {
+    "axioms.txt": "51d1538c4c59be99567b24ac244757abe7272596908293f3b66651e3fa6face1",
+    "build.txt": "7f99f438fc12e98d3c521a428d00488e89256e44e6150512c92ab54479cda7d6",
+    "challenge.txt": "b8b6d66d03364af54af621b715ca921e1db2039f9faf07014cac87e48aa86406",
+    "dependencies.json": "1db1d14511c56a57b0782610c288d5f075aa6ad0b254d3a4a1e9cc9a62f5cb38",
+    "output-paths.json": "b764a1a431c54d15d0a2cc0bcd34b6d4aa3cf35e17ee29044e0a80f45e7ba4de",
+    "pdf-statement.txt": "5b8e281ce616a347678fcf6d1ee63551b1101ae6950e6a1910245f737f29ff18",
+    "README.md": "232f9e11bf82287f95b988b49732370df1837c3e2c7b57dfd0a9794a712c2948",
+    "solution.txt": "dc6dd830958b27a6e4538b2fb8e258f9007693dc43d37777269c451f2bb52b8b",
+    "source-check.json": "83acb939b623cd8e2782f8013feb091fd48ca619ca55f765bb341b65265b6ded",
+    "summary.json": "9b97413e6afc08092c98907a313637891a854a4b4f86700d84ce8060f331ab96",
+    "workspace-lakefile.toml": "a6ff0eceec4b41d03821f145e4b4c1fa08f301befd509db6ce3412446920e8fe"
+  }
+}

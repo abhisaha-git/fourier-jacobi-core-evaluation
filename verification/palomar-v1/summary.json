@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-09-13T08:39:02.651553+00:00",
+  "scope": "Explicit-kernel Haar evaluation; no spherical-coefficient/full-period identification",
+  "local_verification_passed": true,
+  "build_jobs": 3167,
+  "challenge_jobs": 2667,
+  "challenge_expected_warnings": 4,
+  "library_modules": 69,
+  "library_declarations": 4609,
+  "pdf_named_declarations": 62,
+  "solution_declarations": 89,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "original_lean_files_preserved": 71,
+  "preservation_basis": "verification/checked-lean-sha256.json",
+  "lean_pin": "leanprover/lean4:v4.33.1",
+  "mathlib_pin": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "python_packages": {
+    "PyYAML": "6.0.2",
+    "jsonschema": "4.25.1",
+    "attrs": "25.3.0",
+    "jsonschema-specifications": "2025.9.1",
+    "referencing": "0.36.2",
+    "rpds-py": "0.27.1",
+    "typing_extensions": "4.15.0"
+  },
+  "remote_repository": "https://github.com/abhisaha-git/fourier-jacobi-core-evaluation",
+  "remote_visibility": "public",
+  "remote_visibility_source": "GitHub repository metadata read on 2026-09-13",
+  "official_palomar_verification": "not run; submission preparation only",
+  "updated_hosted_ci": "not run; pending commit and push",
+  "submission_sent": false,
+  "commit_or_push_performed": false
+}

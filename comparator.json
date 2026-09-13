@@ -1,0 +1,11 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "FourierJacobiPalomar.measure_normalizations",
+    "FourierJacobiPalomar.integrability",
+    "FourierJacobiPalomar.principal_evaluation",
+    "FourierJacobiPalomar.special_abel_limit"
+  ],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

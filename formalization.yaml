@@ -1,0 +1,149 @@
+version: v0.4
+project:
+  name: Explicit Fourier–Jacobi Haar-core evaluation and Abel limits
+  description: >-
+    For a nonarchimedean local field with residue cardinality q > 2, this
+    development evaluates a sum of three normalized Haar integrals of an
+    explicit eight-term Weyl kernel defined from valuations of entries and
+    two-by-two minors of a concrete 4 by 4 matrix. It proves measurability and
+    Bochner integrability on the natural damped range, an explicit rational
+    evaluation in the undamped interior, principal Abel convergence, and the
+    whole signed special Abel limit at delta = plus or minus q^(-1/2).
+    The Satake parameters are unitary and avoid the stated Weyl walls; the
+    special quotient also excludes parameters equal to its sign. The proof
+    assembles all fifty infinite valuation regions with the source Haar
+    normalizations. This adapts local calculations in Paul, Pitale, Saha and
+    Schmidt's Fourier–Jacobi period paper. Identification of the explicit
+    kernel with the paper's independently defined spherical coefficient and
+    the full period identity are not claimed. The positive special-sign
+    product is identically zero. No undamped special-endpoint integrability
+    or extension to exceptional parameter walls is asserted.
+  authors: [Abhishek Saha]
+  responsible_maintainers: [Abhishek Saha]
+  license: Apache-2.0
+classification:
+  arxiv: [math.NT, math.RT]
+  msc2020: [11F70, 22E50]
+sources:
+  - title: >-
+      An explicit refined Gan–Gross–Prasad identity for Fourier–Jacobi
+      periods of degree 2 Siegel cusp forms
+    authors: [Biplab Paul, Ameya Pitale, Abhishek Saha, Ralf Schmidt]
+    id: https://arxiv.org/abs/2608.26007
+    type: paper
+    location: Section 2, local core-integral and Weyl-sum calculations
+    relationship: adapts
+    note: >-
+      The formalization treats the independently specified explicit matrix-index
+      kernel, rather than asserting its identification with a spherical
+      coefficient. Its source record includes the author's expanded Section 2
+      and fifty-row transcription; the retained row normalizations and exact
+      source hashes are described in PROVENANCE.md and docs/source-map.md.
+      The field theorem allows arbitrary characteristic with q > 2; the source
+      works in characteristic zero with odd residue cardinality. The principal
+      comparison carries 2/(q+1), and the signed special comparison carries
+      (1-epsilon)/(q+1). No endorsement by all paper coauthors is asserted.
+  - title: Expanded Section 2 and corrected core-evaluation brief
+    authors: [Abhishek Saha]
+    id: PROVENANCE.md
+    type: other
+    location: docs/statement.md; docs/proof.md; docs/source-map.md; data/source-row-restorations.json
+    relationship: adapts
+    note: >-
+      Author-supplied project source material, with the original TeX/PDF hashes
+      retained in verification/source-preservation.json. The original expanded
+      document is not distributed here. The standalone formalized_theorem_v1.pdf
+      and its TeX source state the full proved explicit-kernel result.
+related_formalizations:
+  - id: verification/preservation-recheck.json
+    relationship: builds-on
+    note: >-
+      The earlier author-directed Fourier–Jacobi theorem-2-2-v2 development
+      supplied thirty modules: finite Weyl and region algebra, four infinite
+      I0 rows, and local-field valuation, Haar, collision and matrix lemmas.
+      Those sources are included in this substantive repository; this is not
+      a wrapper around a separately required unpublished Lean project.
+      No public repository URL for that earlier snapshot is asserted.
+status:
+  scope: >-
+    Complete explicit-kernel Haar-core evaluation, integrability, principal
+    Abel limit and whole signed special Abel limit. The spherical-coefficient
+    identification and full period theorem are outside the registered claims.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]
+  main_results:
+    - declaration: FourierJacobiPalomar.measure_normalizations
+      file: Solution.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: comparator.json
+      literature_dependencies: []
+    - declaration: FourierJacobiPalomar.integrability
+      file: Solution.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: comparator.json
+      literature_dependencies: []
+    - declaration: FourierJacobiPalomar.principal_evaluation
+      file: Solution.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: comparator.json
+      literature_dependencies: []
+    - declaration: FourierJacobiPalomar.special_abel_limit
+      file: Solution.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: comparator.json
+      literature_dependencies: []
+automation:
+  methods:
+    - method: agent
+      framework: OpenAI Codex
+      tool_setup: >-
+        Human-directed mathematical specifications, Lean 4 and mathlib proof
+        development and checking, and Python/SymPy source transcription and
+        algebra checks. The retained record does not identify every historical
+        model or session; no complete model, cost or timing history is claimed.
+      prompting_notes: >-
+        The author selected the problem and scope. Agents developed and checked
+        proofs and documentation against the specified explicit-kernel target.
+    - method: agent
+      models: [GPT-6]
+      framework: OpenAI Codex
+      tool_setup: >-
+        Palomar preparation on 2026-09-13: repository and source review,
+        self-contained Challenge/Solution statements, checked definition
+        bridges, axiom audit, metadata and reproducibility checks.
+  notes: >-
+    AI systems are credited as tools, not as human authors or maintainers.
+    Four deliberate theorem placeholders occur only in Challenge.lean, with
+    the author's explicit authorization. They are excluded from the unresolved
+    proof counts; Solution.lean and the substantive proof development contain
+    none. The solution never imports the challenge.
+fidelity:
+  divergences: >-
+    Explicit-kernel result only; no spherical-coefficient or full-period bridge.
+    Arbitrary characteristic with residue cardinality q > 2. Regular unitary
+    alpha,beta with alpha,beta != 1, alpha != beta, alpha*beta != 1.
+    With t=q^(-1/2), integrability requires 0<T<=1, t<=|delta|<=1,
+    T*t<|delta|; the undamped evaluation requires t<|delta|<=1.
+    At delta=epsilon*t, epsilon=+/-1, additionally alpha,beta != epsilon;
+    only the damped integral and signed Abel limit are claimed. The epsilon=1
+    factor vanishes identically. No novelty claim or wall extension is made.
+review:
+  status: agent-reviewed
+  reviewers: [OpenAI Codex]
+  notes: >-
+    The repository contains agent review reports and a checked transcription
+    audit of the standalone theorem PDF. Palomar preparation includes local
+    Lean checking and a transitive axiom/safety audit. These are not a claim
+    of independent human peer review or completed Palomar verification.
+    The author confirmed the human authorship and maintainer metadata.
+    See PALOMAR.md and verification/palomar-v1/ for the current checks and
+    the distinction between local evidence and Palomar's hosted verification.
+acknowledgements: >-
+  Lean and mathlib contributors; the mathematical source authors; and the
+  Palomar and Comparator projects for the submission and statement-comparison
+  infrastructure. See PROVENANCE.md for the retained prior development.
