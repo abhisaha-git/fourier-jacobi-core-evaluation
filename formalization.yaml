@@ -23,8 +23,8 @@ project:
   license: Apache-2.0
 classification:
   arxiv: [math.NT, math.RT]
-  msc2020: [11F70, 22E50]
-sources:
+  msc2020: [11F70, 11F85]
+ sources:
   - title: >-
       An explicit refined Gan–Gross–Prasad identity for Fourier–Jacobi
       periods of degree 2 Siegel cusp forms

@@ -170,7 +170,7 @@ def main():
     license_text = licenses[0].read_text(encoding="utf-8")
     require(project["license"] == "Apache-2.0" and "Apache License" in license_text and "Version 2.0, January 2004" in license_text, "Apache license/metadata mismatch")
     require(metadata["classification"]["arxiv"] == ["math.NT", "math.RT"], "Review changed arXiv classification")
-    require(metadata["classification"]["msc2020"] == ["11F70", "22E50"], "Review changed MSC classification")
+    require(metadata["classification"]["msc2020"] == ["11F70", "11F85"], "Review changed MSC classification")
     sources = metadata["sources"]
     require(sources and all(s.get("title") and s.get("relationship") in {"formalizes", "adapts", "independently-proves", "background", "other"} for s in sources), "Invalid source attribution")
     require(any(s["relationship"] in {"formalizes", "adapts", "independently-proves"} for s in sources) and all(s.get("type") != "original-proof" for s in sources), "Expected source-based provenance")
