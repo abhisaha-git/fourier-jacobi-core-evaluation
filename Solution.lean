@@ -4,6 +4,7 @@ import Mathlib.MeasureTheory.Measure.Haar.Basic
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.Complex.Norm
+import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.LinearAlgebra.Matrix.Notation
 import Mathlib.Topology.Algebra.Group.Units
 

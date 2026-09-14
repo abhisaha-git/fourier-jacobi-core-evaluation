@@ -51,6 +51,7 @@ With the pinned environment active, run:
 ```text
 lake build --wfail
 lake build Challenge
+lake env lean --run scripts/check-palomar-statements.lean
 lake env lean -DwarningAsError=true Audit.lean
 lake env lean -DwarningAsError=true StatementAudit_v1.lean
 lake env lean -DwarningAsError=true Solution.lean
@@ -61,6 +62,16 @@ Challenge build emits exactly the four authorized placeholder warnings.
 The Windows `scripts/verify-lean.ps1` runs these checks; the existing
 `scripts/setup-lean.ps1` first obtains project-local tools and dependencies.
 The GitHub workflow runs the same proof checks and metadata checks.
+
+The compiled-statement check compares the four theorem types and every
+transitively used statement declaration in separate Challenge and Solution
+environments. Identical source text alone is insufficient: imported instances
+can change an elaborated definition. Both files explicitly import
+`Mathlib.Analysis.InnerProductSpace.Basic` so their Bochner integrals use the
+same real normed-space structure on the complex numbers. This check rejects
+the mismatch reported by Palomar on 14 September 2026; the correction and its
+verification are recorded in
+[verification/palomar-v2/README.md](verification/palomar-v2/README.md).
 
 For metadata and package checks, use Python 3.11 or later in a project-local
 virtual environment and install `scripts/requirements-palomar.txt`, then run:

@@ -1,0 +1,6 @@
+⚠ [2668/2669] Built Challenge (14s)
+warning: repository/Challenge.lean:165:8: declaration uses `sorry`
+warning: repository/Challenge.lean:173:8: declaration uses `sorry`
+warning: repository/Challenge.lean:183:8: declaration uses `sorry`
+warning: repository/Challenge.lean:198:8: declaration uses `sorry`
+Build completed successfully (2669 jobs).

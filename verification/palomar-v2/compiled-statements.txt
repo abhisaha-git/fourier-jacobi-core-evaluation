@@ -1,0 +1,2 @@
+PASS: 4 compiled theorem types and 29437 transitive statement dependencies match exactly.
+Selected theorem bodies were excluded; run the proof audits and Palomar verification separately.

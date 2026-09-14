@@ -25,6 +25,7 @@ Push-Location $leanVerificationRoot
 try {
     Invoke-LeanVerificationStep 'build.txt' @('build', '--wfail')
     Invoke-LeanVerificationStep 'challenge.txt' @('build', 'Challenge')
+    Invoke-LeanVerificationStep 'compiled-statements.txt' @('env', 'lean', '--run', (Join-Path $leanVerificationRoot 'scripts/check-palomar-statements.lean'), (Join-Path $leanVerificationRoot 'comparator.json'))
     Invoke-LeanVerificationStep 'axioms.txt' @('env', 'lean', '-DwarningAsError=true', (Join-Path $leanVerificationRoot 'Audit.lean'))
     Invoke-LeanVerificationStep 'pdf-statement.txt' @('env', 'lean', '-DwarningAsError=true', (Join-Path $leanVerificationRoot 'StatementAudit_v1.lean'))
     Invoke-LeanVerificationStep 'solution.txt' @('env', 'lean', '-DwarningAsError=true', (Join-Path $leanVerificationRoot 'Solution.lean'))

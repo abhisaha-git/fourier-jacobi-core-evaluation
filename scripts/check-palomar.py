@@ -140,6 +140,8 @@ def main():
     require(lines <= 1000 and byte_count <= 100 * 1024, "Challenge exceeds hard size limits")
     imports = re.findall(r"^import\s+(\S+)\s*$", challenge, re.M)
     require(imports and all(i.startswith("Mathlib.") for i in imports), "Challenge imports project-specific source")
+    require("Mathlib.Analysis.InnerProductSpace.Basic" in imports,
+            "Challenge must use the same complex real normed-space instance as Solution")
     c_prefix = challenge[challenge.index("set_option autoImplicit"):challenge.index("theorem measure_normalizations")]
     s_prefix = solution[solution.index("set_option autoImplicit"):solution.index("open FourierJacobi.Valuations")]
     require(tokens(c_prefix) == tokens(s_prefix), "Challenge/Solution definition or context mismatch")

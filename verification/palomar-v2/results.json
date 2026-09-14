@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-09-14T14:48:52.440798+00:00",
+  "baseline_commit": "287a501a353c874bb112e7ff674b577327ea5c5d",
+  "hosted_failure_run": "https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/34848167581",
+  "lean_toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib_revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "only_proof_module_changes": "One explicit Mathlib import added to each of Challenge.lean and Solution.lean",
+  "definition_statement_and_proof_text_unchanged": true,
+  "metadata_and_dependency_pins_unchanged": true,
+  "source_sha256_normalized_lf": {
+    "Challenge.lean": "27e7d21b60595016f6362d3414b628b19bf6f44fce72916beea6f72db86debdf",
+    "Solution.lean": "a2a982e4b9f23816f085c39a0aeb1ee54807f8940aed99b9b55e1f938f645b85"
+  },
+  "baseline_compiled_comparison": "Expected failure at FourierJacobiPalomar.I",
+  "corrected_compiled_comparison": {
+    "status": "pass",
+    "theorem_types": 4,
+    "transitive_statement_dependencies": 29437
+  },
+  "lake_build": {
+    "status": "pass",
+    "jobs": 3167,
+    "warnings_as_errors": true
+  },
+  "challenge_build": {
+    "status": "pass",
+    "jobs": 2669,
+    "authorized_statement_holes": 4
+  },
+  "solution_axiom_safety_audit": {
+    "status": "pass",
+    "declarations": 89,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "build_environment": "Windows; project-local pinned tools and packages; separate Lake driver using the isolated submitted snapshot and reusing unchanged build artifacts",
+  "hosted_verification_of_correction": "Not run; requires committing, pushing, and a new Palomar submission"
+}
